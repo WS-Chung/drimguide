@@ -115,38 +115,43 @@ body {
 }
 @keyframes dashFlow { to { stroke-dashoffset: -8; } }
 
-/* === BlockFlow (horizontal) === */
+/* === BlockFlow (horizontal on sm+, vertical on mobile) === */
 .block-flow-card {
   position: relative;
-  min-width: 11rem;
-  padding: 0.85rem 1rem;
-  border-radius: 0.9rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.85rem;
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(94, 131, 255, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  gap: 0.1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 .block-flow-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(58, 93, 255, 0.2);
+  border-color: rgba(94, 131, 255, 0.5);
+  box-shadow: 0 10px 24px rgba(58, 93, 255, 0.2);
 }
 .block-flow-card .num {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-family: ui-monospace, monospace;
   color: #8ba9ff;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
 }
 .block-flow-card .title {
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   color: rgb(241 245 249);
+  line-height: 1.25;
+  word-break: keep-all;
 }
 .block-flow-card .sub {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: rgb(148 163 184);
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
+  line-height: 1.3;
+  word-break: keep-all;
 }
 .flow-line-anim-h {
   stroke-dasharray: 4 4;

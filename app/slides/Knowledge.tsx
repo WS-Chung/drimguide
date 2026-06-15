@@ -1,5 +1,6 @@
 import SlideShell from "@/app/components/SlideShell";
 import { Card, CardGrid } from "@/app/components/Card";
+import Callout from "@/app/components/Callout";
 
 export default function Knowledge() {
   return (
@@ -7,8 +8,17 @@ export default function Knowledge() {
       number="10"
       eyebrow="KNOWLEDGE · 공유 KPI"
       title="지식 공유 룰"
-      description="공용 계정의 가장 큰 이유는 “지식의 공유화”입니다. 다음 6가지는 운영 KPI로 추적합니다."
+      description="공용 계정의 가장 큰 이유는 “지식의 공유화”입니다. 아래는 출발점으로 제안하는 6가지 룰과 KPI 가안입니다."
     >
+      <Callout variant="info" title="가안 · 자율 변경 가능">
+        본 슬라이드의 6가지 룰과 KPI는 이해를 돕기 위한{" "}
+        <strong className="text-brand-200">예시(가안)</strong>입니다. 운영하면서
+        팀 단위로 자율적으로 추가·변경·삭제할 수 있으며, 변경 사항은{" "}
+        <span className="font-mono text-brand-200">#ai-governance</span>에
+        공유해 주세요. 정해진 정답이 있는 게 아니라, 우리에게 맞는 방식을 같이
+        만들어가는 과정입니다.
+      </Callout>
+
       <CardGrid cols={3}>
         <Card title="① 1 PR = 1 노하우" badge="자동" icon="◆" accent="brand">
           머지된 모든 PR은 AI 노하우 DB에 한 줄 회고를 남깁니다.
@@ -32,10 +42,15 @@ export default function Knowledge() {
       </CardGrid>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-        <KpiBox value="100%" label="PR → 노하우 적재율" />
+        <KpiBox value="100%" label="PR → 노하우 적재율 (목표)" />
         <KpiBox value="9 / 9" label="공용 계정 주간 회고 작성" />
         <KpiBox value="1+" label="월간 데모데이 발표 / 계정" />
       </div>
+
+      <p className="text-[11.5px] text-slate-500">
+        ※ 위 KPI 수치도 출발점 제안값입니다. 운영해보고 너무 빡빡하거나 느슨하면
+        리뷰에서 조정합니다.
+      </p>
     </SlideShell>
   );
 }

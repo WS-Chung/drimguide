@@ -1,6 +1,5 @@
 import SlideShell from "@/app/components/SlideShell";
 import { Card, CardGrid } from "@/app/components/Card";
-import Callout from "@/app/components/Callout";
 
 export default function Principles() {
   return (
@@ -8,7 +7,7 @@ export default function Principles() {
       number="02"
       eyebrow="WHY · 도입 배경"
       title="우리가 지키는 6가지 원칙"
-      description="회사 차원의 거버넌스를 단번에 적용하기 어려운 현실을 인정하고, 분야별 공용 계정으로 빠르게 시작합니다. 단, 지식 자산은 반드시 회사에 남도록 룰을 강제합니다."
+      description="초기에는 분야별 공용 계정으로 빠르게 시작하고, 운영 데이터를 쌓으며 단계적으로 거버넌스를 고도화합니다. 본 가이드는 그 출발점이며, 회사는 향후 정식 거버넌스 체계로의 전환을 계획하고 있습니다."
     >
       <CardGrid cols={3}>
         <Card title="① 분야별 공용 계정" badge="Why" icon="◆" accent="brand">
@@ -29,17 +28,113 @@ export default function Principles() {
         <Card title="⑤ 공유의 자동화" badge="How" icon="⇄" accent="emerald">
           Slack/Notion/GitHub/Drive에 결과를 흘려보내는 동선. 매주 노하우 공유.
         </Card>
-        <Card title="⑥ 보안과 책임" badge="Risk" icon="⚠" accent="amber">
-          계정·MFA·세션은 PMO에서 관리. 외부 코드 업로드는 사내 정책 준수.
+        <Card title="⑥ 단계적 거버넌스" badge="Plan" icon="⇪" accent="amber">
+          현재는 가벼운 그라운드 룰. 운영 성숙도에 따라 식별·정책 자동화로 전환.
         </Card>
       </CardGrid>
 
-      <Callout variant="warn" title="현실 인정 — MVP Governance">
-        본 가이드는 “완성된 거버넌스”가 아닌, 최소 실행 가능한 거버넌스입니다.
-        운영하면서 부족한 부분은{" "}
-        <span className="font-mono text-amber-200">#ai-governance</span> 채널과
-        분기 리뷰로 보강합니다.
-      </Callout>
+      <Roadmap />
     </SlideShell>
+  );
+}
+
+function Roadmap() {
+  return (
+    <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold">
+          Governance Roadmap
+        </p>
+        <span className="text-[10.5px] text-slate-500 font-mono">
+          3-phase plan
+        </span>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <Phase
+          active
+          tag="NOW · Phase 1"
+          title="공용 계정 도입"
+          items={[
+            "분야별 공용 Claude 계정",
+            "Slack · Notion · GitHub · Drive 연결",
+            "최소 운영 룰 그라운드",
+          ]}
+        />
+        <Phase
+          tag="NEXT · Phase 2"
+          title="식별 단위 운영"
+          items={[
+            "개인 SSO 기반 사용자 식별",
+            "사용자/부서 단위 사용 가시성",
+            "MFA · 세션 정책 정식화",
+          ]}
+        />
+        <Phase
+          tag="LATER · Phase 3"
+          title="자동화 거버넌스"
+          items={[
+            "사내 RAG · MCP 표준화",
+            "자체 LLM 게이트웨이",
+            "DLP · 접근권한 자동 적용",
+          ]}
+        />
+      </div>
+      <p className="mt-4 text-[12px] text-slate-400 leading-relaxed">
+        지금은 <strong className="text-slate-200">Phase 1</strong>입니다. 운영 데이터가
+        충분히 쌓이면 단계적으로 Phase 2 → 3으로 전환합니다. 각 단계의 도입 시점·범위는
+        분기 거버넌스 리뷰에서 결정합니다.
+      </p>
+    </div>
+  );
+}
+
+function Phase({
+  tag,
+  title,
+  items,
+  active,
+}: {
+  tag: string;
+  title: string;
+  items: string[];
+  active?: boolean;
+}) {
+  return (
+    <div
+      className={`relative rounded-xl border p-3.5 transition ${
+        active
+          ? "bg-gradient-to-br from-brand-500/20 via-brand-500/5 to-transparent border-brand-400/40 shadow-glow-sm"
+          : "bg-ink-800/40 border-slate-700/60"
+      }`}
+    >
+      <div className="flex items-center gap-2 mb-2 flex-wrap">
+        <span
+          className={`text-[10px] font-mono font-semibold tracking-wider ${
+            active ? "text-brand-200" : "text-slate-500"
+          }`}
+        >
+          {tag}
+        </span>
+        {active && (
+          <span className="text-[9.5px] px-1.5 py-0.5 rounded bg-brand-400/30 text-brand-100 font-bold tracking-wider uppercase">
+            Current
+          </span>
+        )}
+      </div>
+      <p
+        className={`font-semibold mb-2 text-[14px] ${
+          active ? "text-slate-50" : "text-slate-200"
+        }`}
+      >
+        {title}
+      </p>
+      <ul className="text-[12.5px] space-y-1 list-disc pl-4">
+        {items.map((it, i) => (
+          <li key={i} className={active ? "text-slate-200" : "text-slate-400"}>
+            {it}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
