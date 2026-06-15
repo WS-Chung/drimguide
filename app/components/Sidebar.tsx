@@ -4,28 +4,45 @@ import { useEffect, useState } from "react";
 import { navItems } from "@/app/data/nav";
 
 export default function Sidebar() {
-  const [activeId, setActiveId] = useState<string>("overview");
-  const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActiveId(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-    );
-    navItems.forEach((n) => {
-      const el = document.getElementById(n.id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+    if (typeof window === "undefined") return;
+    if (window.location.hash) {
+      setActiveId(window.location.hash.replace("#", ""));
+    }
+    const onSet = (e: Event) => {
+      const detail = (e as CustomEvent).detail as { id: string | null };
+      setActiveId(detail.id);
+    };
+    window.addEventListener("section:set", onSet);
+    return () => window.removeEventListener("section:set", onSet);
   }, []);
 
-  // 모바일 메뉴 클릭 시 닫기
-  const onClick = () => setOpen(false);
+  const handleClick = (id: string) => {
+    window.dispatchEvent(
+      new CustomEvent("section:set", { detail: { id } })
+    );
+    setActiveId(id);
+    setMobileOpen(false);
+    if (typeof window !== "undefined") {
+      try {
+        history.replaceState(null, "", `#${id}`);
+      } catch {
+        // ignore
+      }
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          document
+            .getElementById(id)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        })
+      );
+    }
+  };
 
+  // 그룹핑: 인접한 같은 group 항목들을 묶음
   const groups: { name?: string; items: typeof navItems }[] = [];
   navItems.forEach((it) => {
     const last = groups[groups.length - 1];
@@ -38,32 +55,31 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* 모바일 토글 */}
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setMobileOpen((v) => !v)}
         className="no-print fixed bottom-5 right-5 z-50 lg:hidden rounded-full bg-brand-600 text-white shadow-xl px-5 py-3 text-sm font-semibold active:scale-95 transition"
         aria-label="목차 열기"
       >
-        {open ? "닫기 ✕" : "목차 ☰"}
+        {mobileOpen ? "닫기 ✕" : "목차 ☰"}
       </button>
 
       <aside
         className={`no-print fixed lg:sticky top-0 left-0 z-40 h-screen w-72 shrink-0 border-r border-slate-200/70 dark:border-slate-800 bg-white/95 dark:bg-slate-950/90 backdrop-blur transition-transform duration-200 ${
-          open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
         <div className="h-full overflow-y-auto px-5 py-6">
-          <a
-            href="#overview"
-            onClick={onClick}
+          <button
+            type="button"
+            onClick={() => handleClick("overview")}
             className="flex items-center gap-2 mb-6"
           >
             <span className="inline-block h-9 w-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700" />
             <span className="font-bold tracking-tight">
               DrimAES <span className="text-brand-600">AI Guide</span>
             </span>
-          </a>
+          </button>
 
           <nav className="space-y-5 text-sm">
             {groups.map((g, gi) => (
@@ -76,14 +92,20 @@ export default function Sidebar() {
                 <ul className="space-y-0.5">
                   {g.items.map((n) => {
                     const active = activeId === n.id;
+                    const isAppendix = n.appendix;
                     return (
                       <li key={n.id}>
                         <a
                           href={`#${n.id}`}
-                          onClick={onClick}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleClick(n.id);
+                          }}
                           className={`block rounded-lg px-3 py-2 transition ${
                             active
-                              ? "bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-200 font-semibold"
+                              ? isAppendix
+                                ? "bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
+                                : "bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-200 font-semibold"
                               : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60"
                           }`}
                         >

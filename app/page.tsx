@@ -3,7 +3,7 @@ import Hero from "@/app/components/Hero";
 import Footer from "@/app/components/Footer";
 import Section from "@/app/components/Section";
 import Callout from "@/app/components/Callout";
-import StepList from "@/app/components/StepList";
+import FlowDiagram from "@/app/components/FlowDiagram";
 import { Card, CardGrid } from "@/app/components/Card";
 import AccountsTable from "@/app/components/AccountsTable";
 
@@ -46,8 +46,8 @@ export default function HomePage() {
                 매주 노하우를 공유합니다.
               </Card>
               <Card title="⑥ 보안과 책임" badge="Risk">
-                계정·결제·MFA·세션은 PMO에서 관리. 외부 코드 업로드는 사내
-                정책에 따릅니다.
+                계정·MFA·세션은 PMO에서 관리. 외부 코드 업로드는 사내 정책에
+                따릅니다.
               </Card>
             </CardGrid>
 
@@ -62,7 +62,7 @@ export default function HomePage() {
             id="accounts"
             eyebrow="02"
             title="공용 계정 구조"
-            description="아래 9개 공용 계정을 전사 표준으로 사용합니다. 메인 관리자(소유자)는 결제·로그인 이슈·MFA 코드 수신·로그아웃 강제 등 운영 책임을 가집니다."
+            description="아래 9개 공용 계정을 전사 표준으로 사용합니다. 각 계정에는 초기 할당자가 1명 지정되어 셋업·로그인 이슈·MFA 코드 수신을 1차로 책임집니다. 팀별 계정 수와 멤버 구성은 운영 중 변동될 수 있습니다."
           >
             <AccountsTable />
 
@@ -70,7 +70,7 @@ export default function HomePage() {
               <ul className="list-disc pl-5 space-y-1">
                 <li>개발 8개 계정 × 2인 = <strong>총 16명</strong> 1차 매칭</li>
                 <li>기획·운영 1개 계정(planner1) × 최대 7명 공용</li>
-                <li>처음에는 위 매핑대로 사용하고, 이후 업무 변동 시 자유 이동 (메인 관리자에게 통지)</li>
+                <li>처음에는 위 매핑대로 사용하고, 이후 업무 변동 시 자유 이동 (해당 계정의 초기 할당자에게 통지)</li>
                 <li>계정 이메일은 <span className="font-mono">id@drimaes.com</span> 패턴 (Google Workspace)</li>
               </ul>
             </Callout>
@@ -94,14 +94,14 @@ export default function HomePage() {
             <CardGrid cols={2}>
               <Card title="로그인 / MFA">
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>Google 2단계 인증은 메인 관리자 휴대폰 + 백업 코드 보관</li>
+                  <li>Google 2단계 인증은 초기 할당자 휴대폰 + 백업 코드 보관</li>
                   <li>가능하면 Passkey 또는 Authenticator 앱 공유는 1Password/Bitwarden 등 비밀번호 매니저로</li>
-                  <li>로그인 알림은 메인 관리자에게 알림 오도록 설정</li>
+                  <li>로그인 알림은 초기 할당자에게 알림 오도록 설정</li>
                 </ul>
               </Card>
               <Card title="동시 사용">
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>같은 시간대에 동일 계정으로 동시 채팅 시, Claude 사용 한도(5h 윈도)를 빠르게 소진합니다.</li>
+                  <li>같은 시간대에 동일 계정으로 동시 채팅 시 사용 한도를 빠르게 소진합니다.</li>
                   <li>장시간 작업이 필요한 경우 Slack <span className="font-mono">#ai-{`{account}`}</span> 채널에 점유 알림</li>
                   <li>공용 계정의 채팅 히스토리는 모두에게 보입니다. 민감 정보는 입력 금지</li>
                 </ul>
@@ -113,10 +113,10 @@ export default function HomePage() {
                   <li>공용 Drive에 작업물 백업, 외부 링크 공유는 도메인 제한</li>
                 </ul>
               </Card>
-              <Card title="비용 / 한도">
+              <Card title="사용 한도 관리">
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>Max $100 × 8 + Pro $25 × 1 = <strong>$825/월</strong></li>
-                  <li>Max는 5시간 단위 대화 한도가 있어 “긴 컨텍스트 + 코딩” 위주로 사용</li>
+                  <li>Max는 일정 시간 단위 대화 한도가 있어 “긴 컨텍스트 + 코딩” 위주로 사용</li>
+                  <li>한도 임박 시 작업을 분할하거나 다음 윈도로 미루기</li>
                   <li>API 추가 사용 필요 시 PMO 승인 후 별도 키 발급</li>
                 </ul>
               </Card>
@@ -138,7 +138,7 @@ export default function HomePage() {
             title="AX 워크플로우 표준"
             description="모든 작업은 PRD → 사전 MD 셋업 → Claude 작업 → 리뷰 → 공유의 5단계로 진행합니다. AX(AI Transformation)는 결과물뿐 아니라 “어떻게 만들었는지”를 함께 자산화하는 것이 핵심입니다."
           >
-            <StepList
+            <FlowDiagram
               steps={[
                 {
                   title: "PRD 작성 (요구사항 정의)",
@@ -195,36 +195,30 @@ export default function HomePage() {
                 {
                   title: "Claude로 설계·구현",
                   body: (
-                    <>
-                      <p>
-                        “질문 → 설계 → 구현 → 자체 리뷰” 순으로 진행. 큰 변경은 PR 분할.
-                        매 PR에 <strong>Claude 사용 로그</strong>(어떤 프롬프트로 만들었는지
-                        요약)를 첨부합니다.
-                      </p>
-                    </>
+                    <p>
+                      “질문 → 설계 → 구현 → 자체 리뷰” 순으로 진행. 큰 변경은 PR 분할.
+                      매 PR에 <strong>Claude 사용 로그</strong>(어떤 프롬프트로 만들었는지
+                      요약)를 첨부합니다.
+                    </p>
                   ),
                 },
                 {
                   title: "사람 리뷰 + Claude 리뷰",
                   body: (
-                    <>
-                      <p>
-                        PR 생성 시 GitHub Action으로 Claude 리뷰 자동 실행 → 사람 리뷰어가
-                        최종 승인. 보안/성능 관련 PR은 반드시 사람 2인 승인.
-                      </p>
-                    </>
+                    <p>
+                      PR 생성 시 GitHub Action으로 Claude 리뷰 자동 실행 → 사람 리뷰어가
+                      최종 승인. 보안/성능 관련 PR은 반드시 사람 2인 승인.
+                    </p>
                   ),
                 },
                 {
                   title: "결과 공유 + 노하우 적재",
                   body: (
-                    <>
-                      <p>
-                        머지 시점에 자동으로 Slack <span className="font-mono">#ax-stream</span>{" "}
-                        에 요약, Notion <strong>AI 노하우 DB</strong>에 한 줄 회고가 등록되도록
-                        자동화합니다.
-                      </p>
-                    </>
+                    <p>
+                      머지 시점에 자동으로 Slack <span className="font-mono">#ax-stream</span>
+                      에 요약, Notion <strong>AI 노하우 DB</strong>에 한 줄 회고가 등록되도록
+                      자동화합니다.
+                    </p>
                   ),
                 },
               ]}
@@ -255,7 +249,7 @@ export default function HomePage() {
             title="Google Workspace 연동"
             description="공용 계정의 Google Workspace 이메일은 반드시 연결합니다. Drive 문서를 Claude에 컨텍스트로 붙이고, Gmail/Calendar는 회의록·일정 자동화에 활용합니다."
           >
-            <StepList
+            <FlowDiagram
               steps={[
                 {
                   title: "공용 Google 계정에 Workspace 이메일 활성화",
@@ -327,7 +321,7 @@ export default function HomePage() {
             title="Slack 연동"
             description="Slack은 “질문 던지면 Claude가 답하고, 그 답이 자산이 되는” 허브입니다. 공식 Claude Slack 앱과 워크플로우를 함께 씁니다."
           >
-            <StepList
+            <FlowDiagram
               steps={[
                 {
                   title: "워크스페이스 채널 표준화",
@@ -418,7 +412,7 @@ export default function HomePage() {
               </Card>
             </CardGrid>
 
-            <StepList
+            <FlowDiagram
               steps={[
                 {
                   title: "Claude ↔ Notion 연결",
@@ -465,7 +459,7 @@ export default function HomePage() {
             title="GitHub 연동"
             description="개발 산출물의 단일 진실. Claude는 ‘초안 작성자 + 자동 리뷰어’로 활용합니다."
           >
-            <StepList
+            <FlowDiagram
               steps={[
                 {
                   title: "조직 단위 표준 레포 템플릿",
@@ -553,7 +547,7 @@ jobs:
               </Card>
               <Card title="② 매주 금요일 16:00 회고">
                 Slack <span className="font-mono">#ai-knowhow</span>에 폼 자동 발송.
-                각 계정 메인 관리자가 작성 책임.
+                각 계정의 초기 할당자가 1차 작성, 공동 사용자도 보강 가능.
               </Card>
               <Card title="③ 월 1회 사내 데모데이">
                 계정별 가장 좋은 사례/실패담을 15분씩 발표.
@@ -570,87 +564,16 @@ jobs:
             </CardGrid>
           </Section>
 
-          {/* 10. 사내 HW */}
-          <Section
-            id="hardware"
-            eyebrow="10 · 보너스"
-            title="사내 유휴 하드웨어 활용"
-            description="고성능 데스크탑과 NAS는 “Claude를 더 강하게” 만들어주는 자산입니다. 외부 SaaS만으로는 어려운 사내 데이터 RAG, 로컬 모델, MCP 서버, 빌드 가속까지 가능합니다."
-          >
-            <CardGrid cols={2}>
-              <Card title="A. 사내 RAG 서버 (강력 추천)" badge="활용 1순위">
-                <p>
-                  유휴 데스크탑 1~2대를 <strong>사내 지식 검색 서버</strong>로 사용. NAS에
-                  쌓인 PDF/MD/회의록/도면 메타를 임베딩해 두면, Claude가 사내 자료를 직접
-                  참조하는 RAG가 됩니다.
-                </p>
-                <p className="mt-2 text-xs text-slate-500">
-                  스택 예: Ollama(임베딩) + Qdrant/PostgreSQL+pgvector + 자체 MCP 서버 +
-                  Cloudflare Tunnel/Tailscale로 외부 안전 접근.
-                </p>
-              </Card>
-              <Card title="B. 로컬 LLM (보조)" badge="비용 절감">
-                <p>
-                  GPU 데스크탑이 있다면 Ollama 또는 vLLM으로 <strong>로컬 모델</strong>(Llama 3.1,
-                  Qwen2.5, Codestral 등)을 띄워서 “민감 데이터 1차 마스킹”과 “저난도 자동완성”에
-                  활용. Claude는 “고난도/최종 결과” 전용으로 분리하면 비용·보안 모두 유리.
-                </p>
-              </Card>
-              <Card title="C. 자체 MCP 서버 호스팅">
-                <p>
-                  Notion, Jira, 사내 Wiki, 빌드 시스템에 접근하는 <strong>맞춤 MCP 서버</strong>를
-                  데스크탑에서 상시 가동. Claude Desktop이 사내망을 통해 호출.
-                </p>
-              </Card>
-              <Card title="D. NAS = 단일 지식 저장소">
-                <p>
-                  NAS의 한 디렉터리를 “사내 AI 코퍼스”로 지정해 모든 산출물·도면·회의록을
-                  표준 경로로 적재. 백업/버전관리(Snapshot)로 데이터 유실 방지.
-                </p>
-              </Card>
-              <Card title="E. 빌드/CI 러너">
-                <p>
-                  사내 GitHub Actions self-hosted runner로 사용. 큰 이미지 빌드(BSP/커널 등)
-                  시간을 SaaS 대비 크게 단축. AI 리뷰 잡도 사내 러너로 돌릴 수 있어 비용 절감.
-                </p>
-              </Card>
-              <Card title="F. 학습/실험 GPU 풀">
-                <p>
-                  유휴 GPU를 모아 시간대별 예약 사용 (Slurm-mini, Ray, 또는 단순 Cron). 평소엔
-                  RAG·로컬 LLM, 야간엔 미세조정·실험.
-                </p>
-              </Card>
-            </CardGrid>
-
-            <Callout variant="info" title="단계적 시작 가이드">
-              <ol className="list-decimal pl-5 space-y-1">
-                <li>1단계: NAS에 <span className="font-mono">/ai-corpus</span> 표준 경로 생성, 회의록·PRD·도면 메타를 모읍니다.</li>
-                <li>2단계: 데스크탑 1대에 Ollama + Qdrant 설치, 임베딩 파이프라인 구축.</li>
-                <li>3단계: 사내 MCP 서버(예: <span className="font-mono">drimaes-knowledge-mcp</span>)로 노출하고 Claude Desktop에 등록.</li>
-                <li>4단계: Tailscale 또는 Cloudflare Tunnel로 재택/외근 시에도 안전하게 접근.</li>
-                <li>5단계: 성과 확인 후 GPU 머신을 로컬 LLM/파인튜닝 용도로 추가 합류.</li>
-              </ol>
-            </Callout>
-
-            <Callout variant="warn" title="보안 체크포인트">
-              <ul className="list-disc pl-5 space-y-1">
-                <li>사내망 노출 포트 최소화 (Tailscale/WireGuard 권장)</li>
-                <li>RAG에 들어가는 자료는 <strong>접근권한 메타</strong>를 임베딩에 함께 저장 → 응답 시 권한 필터링</li>
-                <li>로그(질의/응답) 보관 기간을 사전에 정의(예: 90일)하고 자동 파기</li>
-              </ul>
-            </Callout>
-          </Section>
-
-          {/* 11. 거버넌스 / 보안 */}
+          {/* 10. 거버넌스 / 보안 */}
           <Section
             id="governance"
-            eyebrow="11"
+            eyebrow="10"
             title="거버넌스 & 보안"
             description="공용 계정은 편하지만 위험합니다. 다음 항목은 PMO가 분기별로 점검합니다."
           >
             <CardGrid cols={2}>
               <Card title="결제·청구">
-                결제수단은 법인카드 1개로 통합. 매월 1일 비용 리포트가{" "}
+                결제수단은 법인카드 1개로 통합. 매월 비용 리포트가{" "}
                 <span className="font-mono">#ai-governance</span>에 자동 게시.
               </Card>
               <Card title="계정 회수 절차">
@@ -676,10 +599,10 @@ jobs:
             </CardGrid>
           </Section>
 
-          {/* 12. 체크리스트 */}
+          {/* 11. 체크리스트 */}
           <Section
             id="checklist"
-            eyebrow="12"
+            eyebrow="11"
             title="신규/이동 멤버 온보딩 체크리스트"
             description="공용 계정에 합류하는 멤버가 1시간 안에 끝낼 수 있도록 정렬했습니다."
           >
@@ -715,19 +638,15 @@ jobs:
             </CardGrid>
           </Section>
 
-          {/* 13. FAQ */}
-          <Section
-            id="faq"
-            eyebrow="13"
-            title="자주 묻는 질문"
-          >
+          {/* 12. FAQ */}
+          <Section id="faq" eyebrow="12" title="자주 묻는 질문">
             <div className="space-y-3">
               <Faq q="공용 계정인데 내 채팅이 동료에게 보이지 않게 하려면?">
                 기본적으로 같은 계정 = 같은 히스토리입니다. 민감한 1회성 작업은
                 <strong> Claude Projects</strong>를 분리해 만들고 작업 후 삭제하거나,
-                개인 작업은 사내 RAG/로컬 LLM(섹션 10-B)으로 분리하세요.
+                개인 작업은 사내 RAG/로컬 LLM(부록 참조)으로 분리하세요.
               </Faq>
-              <Faq q="Max의 5시간 한도는 어떻게 분배하나요?">
+              <Faq q="동시 사용 한도는 어떻게 분배하나요?">
                 같은 계정 동시 사용은 한도를 빠르게 소진합니다. 채널에 점유 알림 후
                 중요한 일을 우선 처리하고, 나머지는 다음 윈도로 미루는 것을 권장합니다.
               </Faq>
@@ -743,6 +662,128 @@ jobs:
                 작성하면 PMO가 별도 키를 발급합니다. 공용 계정의 세션 토큰 재사용 금지.
               </Faq>
             </div>
+          </Section>
+
+          {/* ---- 본론 끝 / 부록 시작 ---- */}
+          <div className="appendix-divider no-print">
+            본 가이드 본론 종료 · Appendix
+          </div>
+
+          {/* A. 사내 HW 활용 (부록) */}
+          <Section
+            id="appendix-hw"
+            eyebrow="Appendix A · 부록"
+            title="사내 유휴 하드웨어 활용 (선택)"
+            description="필수가 아닌 보너스 트랙입니다. 고성능 데스크탑과 NAS는 “Claude를 더 강하게” 만들어주는 자산입니다. 외부 SaaS만으로는 어려운 사내 데이터 RAG, 로컬 모델, MCP 서버, 빌드 가속까지 가능합니다."
+            variant="appendix"
+          >
+            <CardGrid cols={2}>
+              <Card title="A. 사내 RAG 서버 (강력 추천)" badge="활용 1순위">
+                <p>
+                  유휴 데스크탑 1~2대를 <strong>사내 지식 검색 서버</strong>로 사용. NAS에
+                  쌓인 PDF/MD/회의록/도면 메타를 임베딩해 두면, Claude가 사내 자료를 직접
+                  참조하는 RAG가 됩니다.
+                </p>
+                <p className="mt-2 text-xs text-slate-500">
+                  스택 예: Ollama(임베딩) + Qdrant/PostgreSQL+pgvector + 자체 MCP 서버 +
+                  Cloudflare Tunnel/Tailscale로 외부 안전 접근.
+                </p>
+              </Card>
+              <Card title="B. 로컬 LLM (보조)" badge="실험용">
+                <p>
+                  GPU 데스크탑이 있다면 Ollama 또는 vLLM으로 <strong>로컬 모델</strong>(Llama 3.1,
+                  Qwen2.5, Codestral 등)을 띄워서 “민감 데이터 1차 마스킹”과 “저난도 자동완성”에
+                  활용. Claude는 “고난도/최종 결과” 전용으로 분리하면 보안·운영 모두 유리.
+                </p>
+              </Card>
+              <Card title="C. 자체 MCP 서버 호스팅">
+                <p>
+                  Notion, Jira, 사내 Wiki, 빌드 시스템에 접근하는 <strong>맞춤 MCP 서버</strong>를
+                  데스크탑에서 상시 가동. Claude Desktop이 사내망을 통해 호출.
+                </p>
+              </Card>
+              <Card title="D. NAS = 단일 지식 저장소">
+                <p>
+                  NAS의 한 디렉터리를 “사내 AI 코퍼스”로 지정해 모든 산출물·도면·회의록을
+                  표준 경로로 적재. 백업/버전관리(Snapshot)로 데이터 유실 방지.
+                </p>
+              </Card>
+              <Card title="E. 빌드/CI 러너">
+                <p>
+                  사내 GitHub Actions self-hosted runner로 사용. 큰 이미지 빌드(BSP/커널 등)
+                  시간을 SaaS 대비 크게 단축. AI 리뷰 잡도 사내 러너로 돌릴 수 있어 운영
+                  유연성↑.
+                </p>
+              </Card>
+              <Card title="F. 학습/실험 GPU 풀">
+                <p>
+                  유휴 GPU를 모아 시간대별 예약 사용 (Slurm-mini, Ray, 또는 단순 Cron). 평소엔
+                  RAG·로컬 LLM, 야간엔 미세조정·실험.
+                </p>
+              </Card>
+            </CardGrid>
+
+            <FlowDiagram
+              steps={[
+                {
+                  title: "1단계 — NAS 표준 경로 정착",
+                  body: (
+                    <>
+                      <span className="font-mono">/ai-corpus</span> 표준 경로 생성, 회의록·PRD·도면
+                      메타를 모읍니다. 폴더 권한과 라벨 정책 먼저 정리.
+                    </>
+                  ),
+                },
+                {
+                  title: "2단계 — 임베딩 파이프라인",
+                  body: (
+                    <>
+                      데스크탑 1대에 Ollama + Qdrant 설치. 신규 파일 발생 시 자동 임베딩.
+                    </>
+                  ),
+                },
+                {
+                  title: "3단계 — 사내 MCP 서버 노출",
+                  body: (
+                    <>
+                      <span className="font-mono">drimaes-knowledge-mcp</span>로 노출하고 Claude
+                      Desktop에 등록. 첫 사용자 그룹부터 점진 확대.
+                    </>
+                  ),
+                },
+                {
+                  title: "4단계 — 안전한 원격 접근",
+                  body: (
+                    <>
+                      Tailscale 또는 Cloudflare Tunnel로 재택/외근 시에도 안전하게 접근.
+                      외부 공개 포트는 만들지 않습니다.
+                    </>
+                  ),
+                },
+                {
+                  title: "5단계 — GPU 합류 / 로컬 LLM",
+                  body: (
+                    <>
+                      성과 확인 후 GPU 머신을 로컬 LLM/파인튜닝 용도로 추가 합류. Claude와
+                      역할 분담을 명확히 합니다.
+                    </>
+                  ),
+                },
+              ]}
+            />
+
+            <Callout variant="warn" title="보안 체크포인트">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>사내망 노출 포트 최소화 (Tailscale/WireGuard 권장)</li>
+                <li>RAG에 들어가는 자료는 <strong>접근권한 메타</strong>를 임베딩에 함께 저장 → 응답 시 권한 필터링</li>
+                <li>로그(질의/응답) 보관 기간을 사전에 정의(예: 90일)하고 자동 파기</li>
+              </ul>
+            </Callout>
+
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              ※ 본 부록은 권장 사항이며, 본론(공용 계정 + 통합 가이드)만으로도 거버넌스는
+              충분히 동작합니다.
+            </p>
           </Section>
 
           <Footer />

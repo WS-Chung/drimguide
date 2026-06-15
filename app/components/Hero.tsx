@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="relative pt-12 pb-16 sm:pt-20 sm:pb-24">
         <div className="inline-flex items-center gap-2 rounded-full border border-brand-200/70 bg-white/70 dark:bg-slate-900/60 px-3 py-1 text-xs font-semibold text-brand-700 dark:text-brand-200">
           <span className="inline-block h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
-          Internal Announcement · v1.0
+          Internal Announcement · v1.1
         </div>
         <h1 className="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
           DrimAES <span className="gradient-text">AI 활용 거버넌스</span>
@@ -27,13 +27,13 @@ export default function Hero() {
             href="#accounts"
             className="rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-2.5 text-sm shadow-sm transition"
           >
-            계정 매핑 바로가기
+            계정 구조 바로가기
           </a>
           <a
             href="#ax-workflow"
             className="rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 hover:bg-white dark:hover:bg-slate-900 text-slate-800 dark:text-slate-100 font-semibold px-5 py-2.5 text-sm transition"
           >
-            AX 워크플로우 보기
+            AX 워크플로우
           </a>
           <a
             href="#integration-google"
@@ -43,22 +43,11 @@ export default function Hero() {
           </a>
         </div>
 
-        <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
-          <Fact label="공용 계정" value="9개" />
-          <Fact label="Max / Pro" value="8 / 1" />
-          <Fact label="월 결제" value="$825" />
-          <Fact label="대상 인원" value="개발 16 + 기획·운영 7" />
-        </dl>
+        <p className="mt-10 text-xs text-slate-500 dark:text-slate-400">
+          각 챕터는 좌측 메뉴 또는 헤더를 클릭하면 펼쳐집니다. 모바일은 우측 하단의
+          “목차 ☰” 버튼을 사용하세요.
+        </p>
       </div>
     </header>
-  );
-}
-
-function Fact({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 px-4 py-3 backdrop-blur">
-      <dt className="text-xs text-slate-500">{label}</dt>
-      <dd className="mt-1 text-lg font-bold">{value}</dd>
-    </div>
   );
 }

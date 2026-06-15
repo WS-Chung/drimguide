@@ -3,11 +3,10 @@ import { accounts, summary } from "@/app/data/accounts";
 export default function AccountsTable() {
   return (
     <div className="space-y-5">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <Stat label="Claude Max" value={`${summary.totalMax}개`} />
         <Stat label="Claude Pro" value={`${summary.totalPro}개`} />
-        <Stat label="총 공용계정" value={`${accounts.length}개`} />
-        <Stat label="월 결제(USD)" value={`$${summary.monthlyUSD}`} />
+        <Stat label="총 공용계정" value={`${summary.totalAccounts}개`} />
       </div>
 
       <div className="table-scroll overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
@@ -16,7 +15,7 @@ export default function AccountsTable() {
             <tr>
               <Th>ID</Th>
               <Th>Google 이메일</Th>
-              <Th>메인 관리자</Th>
+              <Th>초기 할당자</Th>
               <Th>사용 프로젝트</Th>
               <Th>플랜</Th>
               <Th>구분</Th>
@@ -57,6 +56,12 @@ export default function AccountsTable() {
           </tbody>
         </table>
       </div>
+
+      <p className="text-xs text-slate-500 dark:text-slate-400">
+        ※ 초기 할당자는 “해당 계정을 처음 받아 셋업한 사람”입니다. 팀별 계정 수와 공동
+        사용 멤버 구성은 운영 중 변동될 수 있으며, 변경 시{" "}
+        <span className="font-mono">#ai-governance</span> 채널에 통지합니다.
+      </p>
     </div>
   );
 }

@@ -42,12 +42,175 @@ body {
   background-size: 18px 18px;
 }
 
-/* 표 스크롤 시 헤더 그림자 */
 .table-scroll {
   -webkit-overflow-scrolling: touch;
 }
 
-/* 인쇄 친화 (사내 공지 출력) */
+/* Section 펼침 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.28s ease-out;
+}
+
+/* FlowDiagram --------------------------------------------------- */
+.flow-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 1rem;
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.flow-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgb(58 93 255 / 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  .flow-card {
+    background: rgb(15 23 42 / 0.55);
+    border-color: rgb(30 41 59);
+  }
+}
+
+.flow-number {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #3a5dff, #8ba9ff);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgb(58 93 255 / 0.35);
+}
+
+.flow-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.flow-title {
+  font-weight: 600;
+  color: rgb(15 23 42);
+  font-size: 0.98rem;
+}
+@media (prefers-color-scheme: dark) {
+  .flow-title {
+    color: rgb(241 245 249);
+  }
+}
+
+.flow-body {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgb(71 85 105);
+}
+@media (prefers-color-scheme: dark) {
+  .flow-body {
+    color: rgb(203 213 225);
+  }
+}
+
+.flow-arrow {
+  display: grid;
+  place-items: center;
+  color: rgb(148 163 184);
+}
+@media (prefers-color-scheme: dark) {
+  .flow-arrow {
+    color: rgb(71 85 105);
+  }
+}
+
+.flow-line-anim {
+  stroke-dasharray: 4 4;
+  animation: dashFlow 0.9s linear infinite;
+}
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+/* 부록(Appendix) 섹션 - 본론과 시각적 구분 */
+.appendix-divider {
+  position: relative;
+  margin: 3rem 0 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(100 116 139);
+}
+.appendix-divider::before,
+.appendix-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(203 213 225),
+    transparent
+  );
+}
+.appendix-divider::before {
+  left: 0;
+}
+.appendix-divider::after {
+  right: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .appendix-divider::before,
+  .appendix-divider::after {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(51 65 85),
+      transparent
+    );
+  }
+}
+
+.appendix-section {
+  background: linear-gradient(
+    180deg,
+    rgba(241, 245, 249, 0.5),
+    rgba(241, 245, 249, 0)
+  );
+  border-left: 4px solid rgb(148 163 184);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  .appendix-section {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.5),
+      rgba(15, 23, 42, 0)
+    );
+    border-left-color: rgb(71 85 105);
+  }
+}
+
+/* 인쇄 친화 */
 @media print {
   .no-print {
     display: none !important;
@@ -57,5 +220,8 @@ body {
   }
   .section-anchor {
     page-break-inside: avoid;
+  }
+  .flow-line-anim {
+    animation: none;
   }
 }

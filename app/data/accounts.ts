@@ -87,7 +87,5 @@ export const accounts: Account[] = [
 export const summary = {
   totalMax: accounts.filter((a) => a.plan === "MAX").length,
   totalPro: accounts.filter((a) => a.plan === "PRO").length,
-  monthlyUSD:
-    accounts.filter((a) => a.plan === "MAX").length * 100 +
-    accounts.filter((a) => a.plan === "PRO").length * 25,
+  totalAccounts: accounts.length,
 };
