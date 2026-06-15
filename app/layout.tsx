@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DrimAES AI 활용 거버넌스 가이드",
     description:
-      "공용 Claude 계정 운영 규칙, 통합 가이드, 사내 HW 활용까지. 모바일/PC 모두 최적화.",
+      "공용 Claude 계정 운영 규칙, 통합 가이드, 사내 HW 활용까지. 슬라이드 형태로 한 페이지씩.",
     type: "website",
   },
 };
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#3a5dff",
+  themeColor: "#0a0e1a",
 };
 
 export default function RootLayout({
@@ -39,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
-      <body>{children}</body>
+    <html lang="ko" className="dark">
+      <body className="bg-ink-900 text-slate-100 antialiased">{children}</body>
     </html>
   );
 }

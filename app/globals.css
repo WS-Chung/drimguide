@@ -3,156 +3,179 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
   font-feature-settings: "tnum" 1, "ss01" 1;
+  background-color: #04060f;
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(58, 93, 255, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 95% 90%,
+      rgba(139, 92, 246, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 5% 60%,
+      rgba(34, 211, 238, 0.06),
+      transparent 60%
+    );
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-slate-950 text-slate-100;
-  }
-}
-
-.section-anchor {
-  scroll-margin-top: 88px;
-}
-
-.prose-tight p {
-  @apply leading-relaxed;
-}
-
+/* 타이포 */
 .gradient-text {
-  background: linear-gradient(135deg, #3a5dff 0%, #8ba9ff 100%);
+  background: linear-gradient(135deg, #8ba9ff 0%, #5e83ff 50%, #c4b5fd 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* 글래스 카드 */
+.glass {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* dot bg 패턴 */
 .dot-bg {
-  background-image: radial-gradient(rgba(58, 93, 255, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
   background-size: 18px 18px;
 }
 
-.table-scroll {
-  -webkit-overflow-scrolling: touch;
+/* 스크롤바 다크 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
 }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.28); }
 
-/* Section 펼침 애니메이션 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fadeIn {
-  animation: fadeIn 0.28s ease-out;
-}
+/* 표 스크롤 시 */
+.table-scroll { -webkit-overflow-scrolling: touch; }
 
-/* FlowDiagram --------------------------------------------------- */
+/* === FlowDiagram (vertical) === */
 .flow-card {
   display: flex;
   gap: 1rem;
-  padding: 1.1rem 1.25rem;
+  padding: 1rem 1.15rem;
   border-radius: 1rem;
-  background: white;
-  border: 1px solid rgb(226 232 240);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 .flow-card:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgb(58 93 255 / 0.08);
+  border-color: rgba(94, 131, 255, 0.4);
+  box-shadow: 0 6px 22px rgba(58, 93, 255, 0.18);
 }
-@media (prefers-color-scheme: dark) {
-  .flow-card {
-    background: rgb(15 23 42 / 0.55);
-    border-color: rgb(30 41 59);
-  }
-}
-
 .flow-number {
   flex: 0 0 auto;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, #3a5dff, #8ba9ff);
   color: white;
   display: grid;
   place-items: center;
   font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgb(58 93 255 / 0.35);
+  font-size: 0.92rem;
+  box-shadow: 0 4px 14px rgba(58, 93, 255, 0.45);
 }
-
-.flow-content {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
+.flow-content { flex: 1 1 auto; min-width: 0; }
 .flow-title {
   font-weight: 600;
-  color: rgb(15 23 42);
+  color: rgb(241 245 249);
   font-size: 0.98rem;
 }
-@media (prefers-color-scheme: dark) {
-  .flow-title {
-    color: rgb(241 245 249);
-  }
-}
-
 .flow-body {
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   font-size: 0.875rem;
   line-height: 1.65;
-  color: rgb(71 85 105);
+  color: rgb(203 213 225);
 }
-@media (prefers-color-scheme: dark) {
-  .flow-body {
-    color: rgb(203 213 225);
-  }
-}
-
-.flow-arrow {
-  display: grid;
-  place-items: center;
-  color: rgb(148 163 184);
-}
-@media (prefers-color-scheme: dark) {
-  .flow-arrow {
-    color: rgb(71 85 105);
-  }
-}
-
+.flow-arrow { display: grid; place-items: center; color: rgba(148, 163, 184, 0.55); }
 .flow-line-anim {
   stroke-dasharray: 4 4;
   animation: dashFlow 0.9s linear infinite;
 }
-@keyframes dashFlow {
-  to {
-    stroke-dashoffset: -8;
-  }
+@keyframes dashFlow { to { stroke-dashoffset: -8; } }
+
+/* === BlockFlow (horizontal) === */
+.block-flow-card {
+  position: relative;
+  min-width: 11rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(94, 131, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.block-flow-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(58, 93, 255, 0.2);
+}
+.block-flow-card .num {
+  font-size: 0.65rem;
+  font-family: ui-monospace, monospace;
+  color: #8ba9ff;
+  letter-spacing: 0.05em;
+}
+.block-flow-card .title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: rgb(241 245 249);
+}
+.block-flow-card .sub {
+  font-size: 0.72rem;
+  color: rgb(148 163 184);
+  margin-top: 0.15rem;
+}
+.flow-line-anim-h {
+  stroke-dasharray: 4 4;
+  animation: dashFlowH 0.9s linear infinite;
+}
+@keyframes dashFlowH { to { stroke-dashoffset: -8; } }
+
+/* === 슬라이드 진입 애니메이션 === */
+.slide-enter {
+  animation: slideEnter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes slideEnter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* 부록(Appendix) 섹션 - 본론과 시각적 구분 */
+/* 부록 슬라이드 보더 */
+.appendix-bg {
+  background:
+    linear-gradient(180deg, rgba(100, 116, 139, 0.08), transparent 30%);
+}
+
+/* 부록 디바이더 */
 .appendix-divider {
   position: relative;
-  margin: 3rem 0 1rem;
+  margin: 0 0 1rem;
   text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgb(100 116 139);
 }
@@ -163,65 +186,53 @@ body {
   top: 50%;
   width: 38%;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgb(203 213 225),
-    transparent
-  );
+  background: linear-gradient(to right, transparent, rgba(71, 85, 105, 0.6), transparent);
 }
-.appendix-divider::before {
-  left: 0;
-}
-.appendix-divider::after {
-  right: 0;
-}
-@media (prefers-color-scheme: dark) {
-  .appendix-divider::before,
-  .appendix-divider::after {
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgb(51 65 85),
-      transparent
-    );
-  }
+.appendix-divider::before { left: 0; }
+.appendix-divider::after { right: 0; }
+
+/* Code block */
+.code-block {
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid rgba(94, 131, 255, 0.18);
+  color: rgb(226 232 240);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  overflow-x: auto;
 }
 
-.appendix-section {
-  background: linear-gradient(
-    180deg,
-    rgba(241, 245, 249, 0.5),
-    rgba(241, 245, 249, 0)
-  );
-  border-left: 4px solid rgb(148 163 184);
-  border-radius: 0 0.75rem 0.75rem 0;
-  padding-left: 1rem;
-  margin-top: 0.5rem;
+/* Tag/pill */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: rgba(94, 131, 255, 0.12);
+  color: #b8ccff;
+  border: 1px solid rgba(94, 131, 255, 0.25);
 }
-@media (prefers-color-scheme: dark) {
-  .appendix-section {
-    background: linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 0.5),
-      rgba(15, 23, 42, 0)
-    );
-    border-left-color: rgb(71 85 105);
-  }
+.tag-muted {
+  background: rgba(100, 116, 139, 0.15);
+  color: rgb(203 213 225);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+.tag-warn {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fcd34d;
+  border-color: rgba(251, 191, 36, 0.3);
 }
 
-/* 인쇄 친화 */
+/* 인쇄 비활성 */
 @media print {
-  .no-print {
-    display: none !important;
-  }
+  .no-print { display: none !important; }
   body {
-    @apply bg-white text-black;
+    background: white !important;
+    color: black !important;
   }
-  .section-anchor {
-    page-break-inside: avoid;
-  }
-  .flow-line-anim {
-    animation: none;
-  }
+  .flow-line-anim, .flow-line-anim-h { animation: none; }
 }

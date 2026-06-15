@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -34,12 +35,35 @@ const config: Config = {
           800: "#172a8c",
           900: "#13226e",
         },
+        ink: {
+          950: "#04060f",
+          900: "#0a0e1a",
+          800: "#0f1424",
+          700: "#161c2e",
+          600: "#1e2640",
+        },
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: "none",
-          },
+      boxShadow: {
+        glow: "0 0 24px rgba(94, 131, 255, 0.35)",
+        "glow-sm": "0 0 12px rgba(94, 131, 255, 0.4)",
+      },
+      animation: {
+        slideIn: "slideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
+        fadeIn: "fadeIn 0.35s ease-out",
+        floatPulse: "floatPulse 3.4s ease-in-out infinite",
+      },
+      keyframes: {
+        slideIn: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        floatPulse: {
+          "0%, 100%": { transform: "translateY(0)", opacity: "0.7" },
+          "50%": { transform: "translateY(-4px)", opacity: "1" },
         },
       },
     },

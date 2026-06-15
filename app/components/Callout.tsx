@@ -3,19 +3,17 @@ import type { ReactNode } from "react";
 type Variant = "info" | "warn" | "success" | "danger";
 
 const styles: Record<Variant, string> = {
-  info: "bg-brand-50 dark:bg-brand-900/30 border-brand-200 dark:border-brand-700 text-brand-900 dark:text-brand-100",
-  warn: "bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-700 text-amber-900 dark:text-amber-100",
-  success:
-    "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-700 text-emerald-900 dark:text-emerald-100",
-  danger:
-    "bg-rose-50 dark:bg-rose-900/30 border-rose-200 dark:border-rose-700 text-rose-900 dark:text-rose-100",
+  info: "bg-brand-500/10 border-brand-400/30 text-brand-100",
+  warn: "bg-amber-500/10 border-amber-400/30 text-amber-100",
+  success: "bg-emerald-500/10 border-emerald-400/30 text-emerald-100",
+  danger: "bg-rose-500/10 border-rose-400/30 text-rose-100",
 };
 
 const icons: Record<Variant, string> = {
-  info: "ℹ️",
-  warn: "⚠️",
-  success: "✅",
-  danger: "🚫",
+  info: "ℹ",
+  warn: "⚠",
+  success: "✓",
+  danger: "✕",
 };
 
 export default function Callout({
@@ -28,14 +26,16 @@ export default function Callout({
   children: ReactNode;
 }) {
   return (
-    <div className={`rounded-xl border p-4 sm:p-5 ${styles[variant]}`}>
+    <div className={`rounded-xl border backdrop-blur-md p-3.5 sm:p-4 ${styles[variant]}`}>
       {title && (
-        <p className="font-semibold mb-1.5 flex items-center gap-2">
-          <span aria-hidden>{icons[variant]}</span>
+        <p className="font-semibold mb-1 flex items-center gap-2 text-[14px]">
+          <span aria-hidden className="opacity-80">
+            {icons[variant]}
+          </span>
           <span>{title}</span>
         </p>
       )}
-      <div className="text-sm leading-relaxed">{children}</div>
+      <div className="text-[13.5px] leading-relaxed text-slate-200">{children}</div>
     </div>
   );
 }

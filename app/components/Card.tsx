@@ -13,30 +13,50 @@ export function CardGrid({
       : cols === 3
       ? "sm:grid-cols-2 lg:grid-cols-3"
       : "sm:grid-cols-2";
-  return <div className={`grid grid-cols-1 ${grid} gap-4`}>{children}</div>;
+  return <div className={`grid grid-cols-1 ${grid} gap-3.5`}>{children}</div>;
 }
 
 export function Card({
   title,
   badge,
+  icon,
+  accent,
   children,
 }: {
   title: string;
   badge?: string;
+  icon?: ReactNode;
+  accent?: "brand" | "amber" | "emerald" | "rose" | "slate";
   children: ReactNode;
 }) {
+  const accentColor =
+    accent === "amber"
+      ? "from-amber-500/20"
+      : accent === "emerald"
+      ? "from-emerald-500/20"
+      : accent === "rose"
+      ? "from-rose-500/20"
+      : accent === "slate"
+      ? "from-slate-500/15"
+      : "from-brand-500/20";
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="font-semibold text-slate-900 dark:text-slate-50">{title}</h3>
-        {badge && (
-          <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-brand-100 text-brand-700 dark:bg-brand-900/60 dark:text-brand-200">
-            {badge}
-          </span>
-        )}
-      </div>
-      <div className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-        {children}
+    <div className="group relative rounded-2xl glass p-4 sm:p-5 transition hover:-translate-y-0.5 hover:border-brand-400/40">
+      <div
+        className={`pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br ${accentColor} via-transparent to-transparent opacity-50`}
+      />
+      <div className="relative">
+        <div className="flex items-center gap-2 mb-1.5">
+          {icon && <span className="text-base text-brand-300">{icon}</span>}
+          <h3 className="font-semibold text-slate-50 text-[15px] flex-1">{title}</h3>
+          {badge && (
+            <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-brand-500/20 text-brand-200 ring-1 ring-brand-400/30">
+              {badge}
+            </span>
+          )}
+        </div>
+        <div className="text-[13.5px] leading-relaxed text-slate-300">
+          {children}
+        </div>
       </div>
     </div>
   );
