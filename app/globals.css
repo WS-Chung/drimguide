@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+.section-anchor {
+  scroll-margin-top: 88px;
+}
+
+.prose-tight p {
+  @apply leading-relaxed;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3a5dff 0%, #8ba9ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dot-bg {
+  background-image: radial-gradient(rgba(58, 93, 255, 0.18) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* 표 스크롤 시 헤더 그림자 */
+.table-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 인쇄 친화 (사내 공지 출력) */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    @apply bg-white text-black;
+  }
+  .section-anchor {
+    page-break-inside: avoid;
+  }
+}
