@@ -8,14 +8,14 @@ export default function UseCasesOverview() {
       number="11"
       eyebrow="FIRST USE CASES · 개요"
       title="전환 후 첫 1주, 4개 통합으로 만드는 즉시 효용"
-      description="Team Plan 전환만으로는 가시적 효과가 부족합니다. 4개 도구마다 “1~2일 안에 셋업하고 즉시 결과가 보이는” 단일 유즈케이스를 정해 시작합니다."
+      description="Team Plan 전환만으로는 가시적 효과가 부족합니다. 4개 도구마다 “1~2일 안에 셋업하고 즉시 결과가 보이는” 단일 유즈케이스를 정해 시작합니다. UC1(Agent 표준 룰셋)을 가장 먼저 배포해야 UC2~UC4의 결과 품질이 보장됩니다."
     >
       <CardGrid cols={4}>
-        <Card title="💬 UC1 · Slack" badge="D+1" accent="emerald">
-          <p className="font-semibold text-slate-100">Daily 비동기 요약</p>
+        <Card title="🧰 UC1 · Agent 표준 룰셋" badge="D+1~3" accent="emerald">
+          <p className="font-semibold text-slate-100">환경 무관 동일 룰셋 배포</p>
           <p className="mt-1">
-            매일 아침 09:00 어제 프로젝트 채널 활동을 Claude가 5줄 요약. 30분 회의 →
-            5분 비동기 리뷰.
+            agent-deploy로 .agents/rules + Claude/Codex/Gemini 진입점을 1회 설치.
+            16명이 도구·OS 무관하게 동일 SDD/아키텍처/커밋 룰로 작업.
           </p>
         </Card>
         <Card title="📅 UC2 · Workspace" badge="D+1" accent="brand">

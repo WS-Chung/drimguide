@@ -10,7 +10,7 @@ import SlackSlide from "./SlackSlide";
 import NotionSlide from "./NotionSlide";
 import GitHubSlide from "./GitHubSlide";
 import UseCasesOverview from "./UseCasesOverview";
-import UseCaseSlack from "./UseCaseSlack";
+import UseCaseAgentStandard from "./UseCaseAgentStandard";
 import UseCaseWorkspace from "./UseCaseWorkspace";
 import UseCaseGitHub from "./UseCaseGitHub";
 import UseCaseNotion from "./UseCaseNotion";
@@ -32,7 +32,7 @@ export const slides: Record<string, ComponentType> = {
   "integration-notion": NotionSlide,
   "integration-github": GitHubSlide,
   "uc-overview": UseCasesOverview,
-  "uc-slack": UseCaseSlack,
+  "uc-agent-standard": UseCaseAgentStandard,
   "uc-workspace": UseCaseWorkspace,
   "uc-github": UseCaseGitHub,
   "uc-notion": UseCaseNotion,

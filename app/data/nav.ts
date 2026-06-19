@@ -19,7 +19,7 @@ export const navItems: NavItem[] = [
   { id: "integration-notion", label: "Notion", number: "09", group: "통합 가이드" },
   { id: "integration-github", label: "GitHub", number: "10", group: "통합 가이드" },
   { id: "uc-overview", label: "First UC — 개요", number: "11", group: "First Use Cases", isNew: true },
-  { id: "uc-slack", label: "UC1 · Slack", number: "12", group: "First Use Cases", isNew: true },
+  { id: "uc-agent-standard", label: "UC1 · Agent 표준 룰셋", number: "12", group: "First Use Cases", isNew: true },
   { id: "uc-workspace", label: "UC2 · Workspace", number: "13", group: "First Use Cases", isNew: true },
   { id: "uc-github", label: "UC3 · GitHub", number: "14", group: "First Use Cases", isNew: true },
   { id: "uc-notion", label: "UC4 · Notion", number: "15", group: "First Use Cases", isNew: true },
