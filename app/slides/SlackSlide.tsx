@@ -8,7 +8,7 @@ const channels = [
   { name: "#ai-governance", desc: "룰 · 이슈 · 개정 제안", color: "amber" },
   { name: "#ax-stream", desc: "Claude 결과 자동 게시", color: "emerald" },
   { name: "#ai-{account}", desc: "계정별 점유/이슈", color: "slate" },
-  { name: "#ai-knowhow", desc: "주간 노하우 공유", color: "violet" },
+  { name: "#ai-knowhow", desc: "주간 노하우 공유", color: "mint" },
 ];
 
 const colorClasses: Record<string, string> = {
@@ -16,7 +16,7 @@ const colorClasses: Record<string, string> = {
   amber: "bg-amber-500/15 text-amber-200 border-amber-400/30",
   emerald: "bg-emerald-500/15 text-emerald-200 border-emerald-400/30",
   slate: "bg-slate-500/15 text-slate-200 border-slate-400/30",
-  violet: "bg-violet-500/15 text-violet-200 border-violet-400/30",
+  mint: "bg-emerald-500/15 text-emerald-200 border-emerald-400/30",
 };
 
 export default function SlackSlide() {

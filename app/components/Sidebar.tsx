@@ -102,7 +102,7 @@ export default function Sidebar({ activeId, onSelect }: Props) {
                             }`}
                           >
                             {isActive && !isAppendix && (
-                              <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-[3px] rounded-r-full bg-brand-300 shadow-[0_0_10px_2px_rgba(139,169,255,0.7)]" />
+                              <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-[3px] rounded-r-full bg-brand-300 shadow-[0_0_10px_2px_rgba(27,187,204,0.7)]" />
                             )}
                             <span
                               className={`text-[11px] font-mono font-semibold tabular-nums ${
@@ -124,7 +124,7 @@ export default function Sidebar({ activeId, onSelect }: Props) {
                               </span>
                             )}
                             {isActive && !isAppendix && (
-                              <span className="h-1.5 w-1.5 rounded-full bg-brand-300 shadow-[0_0_8px_2px_rgba(139,169,255,0.7)]" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-brand-300 shadow-[0_0_8px_2px_rgba(27,187,204,0.7)]" />
                             )}
                           </button>
                         </li>

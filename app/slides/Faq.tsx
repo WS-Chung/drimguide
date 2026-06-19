@@ -91,7 +91,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "API 키가 필요한 자동화는?",
     a: (
       <>
-        UC3·UC4용 API 키는 PMO가 발급합니다.{" "}
+        자동화 워크플로우용 API 키는 PMO가 발급합니다.{" "}
         <span className="font-mono text-brand-200">#ai-governance</span>에 사용
         목적/예상 호출량을 적으면 됩니다. 좌석 세션 토큰 재사용 금지.
       </>

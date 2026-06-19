@@ -16,17 +16,17 @@ body {
   background-image:
     radial-gradient(
       ellipse 80% 50% at 50% -10%,
-      rgba(58, 93, 255, 0.18),
+      rgba(6,67,140, 0.18),
       transparent 55%
     ),
     radial-gradient(
       ellipse 60% 40% at 95% 90%,
-      rgba(139, 92, 246, 0.12),
+      rgba(27,187,204, 0.12),
       transparent 55%
     ),
     radial-gradient(
       ellipse 40% 30% at 5% 60%,
-      rgba(34, 211, 238, 0.06),
+      rgba(125,234,213, 0.06),
       transparent 60%
     );
   background-attachment: fixed;
@@ -35,7 +35,7 @@ body {
 
 /* 타이포 */
 .gradient-text {
-  background: linear-gradient(135deg, #8ba9ff 0%, #5e83ff 50%, #c4b5fd 100%);
+  background: linear-gradient(135deg, #7CC9D5 0%, #1BBBCC 50%, #7DEAD5 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -80,21 +80,21 @@ body {
 }
 .flow-card:hover {
   transform: translateY(-1px);
-  border-color: rgba(94, 131, 255, 0.4);
-  box-shadow: 0 6px 22px rgba(58, 93, 255, 0.18);
+  border-color: rgba(27,187,204, 0.4);
+  box-shadow: 0 6px 22px rgba(6,67,140, 0.18);
 }
 .flow-number {
   flex: 0 0 auto;
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #3a5dff, #8ba9ff);
+  background: linear-gradient(135deg, #4383AF, #7CC9D5);
   color: white;
   display: grid;
   place-items: center;
   font-weight: 700;
   font-size: 0.92rem;
-  box-shadow: 0 4px 14px rgba(58, 93, 255, 0.45);
+  box-shadow: 0 4px 14px rgba(67,131,175, 0.45);
 }
 .flow-content { flex: 1 1 auto; min-width: 0; }
 .flow-title {
@@ -121,7 +121,7 @@ body {
   padding: 0.65rem 0.8rem;
   border-radius: 0.85rem;
   background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(94, 131, 255, 0.25);
+  border: 1px solid rgba(27,187,204, 0.25);
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -129,13 +129,13 @@ body {
 }
 .block-flow-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(94, 131, 255, 0.5);
-  box-shadow: 0 10px 24px rgba(58, 93, 255, 0.2);
+  border-color: rgba(27,187,204, 0.5);
+  box-shadow: 0 10px 24px rgba(67,131,175, 0.2);
 }
 .block-flow-card .num {
   font-size: 0.6rem;
   font-family: ui-monospace, monospace;
-  color: #8ba9ff;
+  color: #7CC9D5;
   letter-spacing: 0.04em;
   line-height: 1.1;
 }
@@ -199,7 +199,7 @@ body {
 /* Code block */
 .code-block {
   background: rgba(2, 6, 23, 0.85);
-  border: 1px solid rgba(94, 131, 255, 0.18);
+  border: 1px solid rgba(27,187,204, 0.18);
   color: rgb(226 232 240);
   border-radius: 0.75rem;
   padding: 1rem 1.1rem;
@@ -217,9 +217,9 @@ body {
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 500;
-  background: rgba(94, 131, 255, 0.12);
-  color: #b8ccff;
-  border: 1px solid rgba(94, 131, 255, 0.25);
+  background: rgba(27,187,204, 0.12);
+  color: #BCE3EA;
+  border: 1px solid rgba(27,187,204, 0.25);
 }
 .tag-muted {
   background: rgba(100, 116, 139, 0.15);

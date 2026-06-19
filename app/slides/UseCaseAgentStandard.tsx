@@ -187,12 +187,11 @@ jira : DRM-123`}</pre>
       </CardGrid>
 
       <Callout variant="info" title="ℹ 첫 도입 시점에 이걸 1순위로 두는 이유">
-        다른 3개 UC(Workspace 회의록, GitHub PR 리뷰, Notion PRD 회고)는 모두{" "}
+        이후 추가될 모든 자동화(Slack 데일리 요약, 회의록 → Action Item, PR 자동 리뷰, PRD ↔ 코드 회고 등)는 모두{" "}
         <strong className="text-slate-100">표준 룰셋이 깔린 프로젝트</strong>를 전제로 동작합니다.
-        UC1을 먼저 깔지 않으면 도구·환경별 결과 품질이 달라져{" "}
-        UC2~UC4의 효과도 함께 떨어집니다. 따라서{" "}
-        <strong className="text-slate-100">Day 1~3에 UC1 적용 → Day 4부터 UC2~UC4 순차 가동</strong>이
-        가장 합리적인 순서입니다.
+        UC1을 먼저 깔지 않으면 도구·환경별 결과 품질이 어긋나기 시작합니다. 따라서{" "}
+        <strong className="text-slate-100">Day 1~3에 UC1 적용 → 안정화 후 후속 UC를 단계적으로 추가</strong>하는
+        순서가 합리적입니다.
       </Callout>
 
       <Callout variant="success" title="✓ 측정 지표 (2주차 회고)">

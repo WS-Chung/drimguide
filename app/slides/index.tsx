@@ -11,9 +11,6 @@ import NotionSlide from "./NotionSlide";
 import GitHubSlide from "./GitHubSlide";
 import UseCasesOverview from "./UseCasesOverview";
 import UseCaseAgentStandard from "./UseCaseAgentStandard";
-import UseCaseWorkspace from "./UseCaseWorkspace";
-import UseCaseGitHub from "./UseCaseGitHub";
-import UseCaseNotion from "./UseCaseNotion";
 import Knowledge from "./Knowledge";
 import Governance from "./Governance";
 import Checklist from "./Checklist";
@@ -33,9 +30,6 @@ export const slides: Record<string, ComponentType> = {
   "integration-github": GitHubSlide,
   "uc-overview": UseCasesOverview,
   "uc-agent-standard": UseCaseAgentStandard,
-  "uc-workspace": UseCaseWorkspace,
-  "uc-github": UseCaseGitHub,
-  "uc-notion": UseCaseNotion,
   knowledge: Knowledge,
   governance: Governance,
   checklist: Checklist,
