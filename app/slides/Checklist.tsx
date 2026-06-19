@@ -3,37 +3,37 @@ import SlideShell from "@/app/components/SlideShell";
 const phases = [
   {
     num: "01",
-    title: "계정 접근",
+    title: "좌석 활성화",
     items: [
-      "1Password에서 해당 계정 비밀번호 공유 받기",
-      "Google 로그인 → 2단계 인증 완료",
-      "Workspace 메일 수신 확인",
+      "PMO에서 Team 좌석 초대 메일 수령",
+      "Workspace SSO로 로그인",
+      "Profile 사진·이름·시간대 설정",
     ],
   },
   {
     num: "02",
-    title: "Claude 셋업",
+    title: "통합 셋업",
     items: [
-      "Claude 웹/Desktop 로그인",
       "Connectors: Drive / GitHub / Notion 연결 확인",
-      "Claude Code CLI 설치 및 로그인",
+      "(Premium만) Claude Code CLI 설치",
+      "해당 Project(들)에 가입",
     ],
   },
   {
     num: "03",
-    title: "협업 도구 가입",
+    title: "협업 도구",
     items: [
-      "Slack: #ai-announcement, #ax-stream, #ai-{account} 가입",
+      "Slack 채널 가입: #ai-announcement, #ax-stream, #proj-{name}",
       "Notion 워크스페이스 초대 수락",
-      "GitHub 조직 초대 + 2FA",
+      "GitHub 조직 + 2FA",
     ],
   },
   {
     num: "04",
     title: "첫 작업 룰 숙지",
     items: [
-      "PRD 템플릿 1회 읽기",
-      "레포의 CLAUDE.md 1회 읽기",
+      "이 가이드 v2 1회 정독 (특히 First UC)",
+      "본인 프로젝트 레포의 CLAUDE.md 1회 읽기",
       "1번째 PR 머지 후 노하우 1줄 등록",
     ],
   },
@@ -42,10 +42,10 @@ const phases = [
 export default function Checklist() {
   return (
     <SlideShell
-      number="12"
+      number="18"
       eyebrow="ONBOARDING"
       title="신규 / 이동 멤버 체크리스트"
-      description="공용 계정에 합류하는 멤버가 1시간 안에 끝낼 수 있도록 정렬했습니다."
+      description="Team Plan 모델 기준. 어드민이 좌석을 발급하면 본인은 1시간 내에 모든 셋업을 끝낼 수 있습니다."
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         {phases.map((p) => (
@@ -58,7 +58,9 @@ export default function Checklist() {
               <span className="inline-grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 text-white font-bold text-sm shadow-glow-sm">
                 {p.num}
               </span>
-              <h3 className="font-semibold text-slate-50 text-base">{p.title}</h3>
+              <h3 className="font-semibold text-slate-50 text-base">
+                {p.title}
+              </h3>
             </div>
             <ul className="space-y-2">
               {p.items.map((it) => (
@@ -78,7 +80,7 @@ export default function Checklist() {
       </div>
 
       <p className="text-[11.5px] text-slate-500">
-        ※ 항목별 인수 완료 후 초기 할당자에게 “온보딩 완료” DM 보내기.
+        ※ 항목별 인수 완료 후 PMO에게 “온보딩 완료” DM. 첫 1주 후 회고 1줄 작성.
       </p>
     </SlideShell>
   );

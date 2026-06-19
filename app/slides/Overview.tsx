@@ -2,15 +2,11 @@ import BlockFlow from "@/app/components/BlockFlow";
 
 export default function Overview() {
   return (
-    <article className="slide-enter min-h-screen relative overflow-hidden">
-      <div className="absolute inset-0 dot-bg opacity-30 pointer-events-none" />
-      <div className="absolute -top-40 -right-32 h-96 w-96 rounded-full bg-brand-500/30 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-20 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl pointer-events-none" />
-
-      <div className="relative px-6 sm:px-10 lg:px-14 pt-12 sm:pt-20 pb-12">
+    <article className="slide-enter min-h-screen">
+      <div className="px-6 sm:px-10 lg:px-14 pt-12 sm:pt-20 pb-12">
         <div className="inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-3 py-1 text-[11px] font-semibold text-brand-200 backdrop-blur">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-300 animate-pulse" />
-          Internal Announcement · v1.2
+          Internal · v2 · Team Plan 전환 반영
         </div>
 
         <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05]">
@@ -20,16 +16,16 @@ export default function Overview() {
         </h1>
 
         <p className="mt-5 max-w-2xl text-base sm:text-lg text-slate-300 leading-relaxed">
-          공용 Claude(Max/Pro) 계정 운영, AX 워크플로우, Slack · Notion · GitHub ·
-          Google Workspace 연동 표준. 모든 구성원이 같은 룰로 더 빠르게, 더 잘
-          만들기 위한 사내 표준입니다.
+          실무진 피드백을 반영해 <strong className="text-slate-100">Team Plan 16-seat 모델</strong>로
+          업데이트했습니다. 거버넌스 로드맵 Phase 2 진입, 그리고 4개 First Use Case로
+          즉시 효용을 만듭니다.
         </p>
 
         <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
-          <Fact label="공용 계정" value="9" suffix="개" />
-          <Fact label="Max / Pro" value="8 / 1" />
+          <Fact label="Team 좌석" value="16" suffix="seat" />
           <Fact label="통합 도구" value="4" suffix="종" />
-          <Fact label="AX 단계" value="5" suffix="단계" />
+          <Fact label="First Use Cases" value="4" suffix="개" />
+          <Fact label="현재 Phase" value="2" suffix="진입" />
         </dl>
 
         <div className="mt-10">

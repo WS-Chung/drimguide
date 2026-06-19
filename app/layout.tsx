@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DrimAES AI 활용 거버넌스 가이드",
+  title: "DrimAES AI 활용 거버넌스 가이드 · v2",
   description:
-    "DrimAES 사내 공용 Claude(Max/Pro) 계정 운영, AX 워크플로우, Slack/Notion/GitHub/Google Workspace 연동 및 사내 하드웨어 활용 안내",
-  applicationName: "DrimAES AI Guide",
+    "DrimAES 사내 Team Plan 기반 Claude 운영, AX 워크플로우, Slack/Notion/GitHub/Google Workspace 연동, 4개 First Use Case 가이드",
+  applicationName: "DrimAES AI Guide v2",
   authors: [{ name: "DrimAES" }],
   keywords: [
     "DrimAES",
