@@ -75,7 +75,7 @@ export default function Sidebar({ activeId, onSelect }: Props) {
               return (
                 <div key={gi}>
                   {g.name && (
-                    <p className="px-2 mb-1.5 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] font-semibold text-slate-500">
+                    <p className="px-2 mb-1.5 flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500">
                       <span>{g.name}</span>
                       {groupHasNew && (
                         <span className="text-[9px] font-bold tracking-wider px-1 py-px rounded bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-400/35 normal-case">
@@ -105,7 +105,7 @@ export default function Sidebar({ activeId, onSelect }: Props) {
                               <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-[3px] rounded-r-full bg-brand-300 shadow-[0_0_10px_2px_rgba(27,187,204,0.7)]" />
                             )}
                             <span
-                              className={`text-[11px] font-mono font-semibold tabular-nums ${
+                              className={`text-[12px] font-mono font-semibold tabular-nums ${
                                 isActive
                                   ? isAppendix
                                     ? "text-slate-300"

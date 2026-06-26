@@ -47,14 +47,14 @@ export function Card({
       <div className="relative">
         <div className="flex items-center gap-2 mb-1.5">
           {icon && <span className="text-base text-brand-300">{icon}</span>}
-          <h3 className="font-semibold text-slate-50 text-[15px] flex-1">{title}</h3>
+          <h3 className="font-semibold text-slate-50 text-[16px] flex-1">{title}</h3>
           {badge && (
-            <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-brand-500/20 text-brand-200 ring-1 ring-brand-400/30">
+            <span className="text-[11px] font-medium px-1.5 py-0.5 rounded-md bg-brand-500/20 text-brand-200 ring-1 ring-brand-400/30">
               {badge}
             </span>
           )}
         </div>
-        <div className="text-[13.5px] leading-relaxed text-slate-300">
+        <div className="text-[14.5px] leading-relaxed text-slate-300">
           {children}
         </div>
       </div>

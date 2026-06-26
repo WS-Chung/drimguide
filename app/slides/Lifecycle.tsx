@@ -14,10 +14,10 @@ export default function Lifecycle() {
       {/* 상세 가이드 바로가기 — 타이틀 직하 */}
       <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
         <div className="flex-1 min-w-[220px]">
-          <p className="text-[14px] font-semibold text-slate-100">
+          <p className="text-[15px] font-semibold text-slate-100">
             📗 상세 사용 가이드
           </p>
-          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+          <p className="text-[13.5px] text-slate-400 mt-0.5 leading-relaxed">
             대화 요령 · 프롬프트 라이브러리 · 지식 공유(가져오기 · 승격 · 내보내기)
             전체 흐름이 한 페이지에 정리되어 있습니다. 설치 이후 단계가 궁금하면
             펼쳐 보세요.
@@ -25,14 +25,14 @@ export default function Lifecycle() {
         </div>
         <a
           href="#usage-guide"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[14.5px] ring-1 ring-brand-400/35 transition"
         >
           상세 가이드 열기 →
         </a>
       </div>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           한 건의 요청이 도는 흐름
         </p>
         <BlockFlow
@@ -48,17 +48,17 @@ export default function Lifecycle() {
       </div>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           SDD 모드 — 같은 흐름, 다른 깊이
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           SDD(Spec Driven Development)는 "문서부터 쓰는 무거운 방법론"이 아닙니다. 매번
           질문으로 멈추지 않도록, 에이전트가 요청의 무게를 보고{" "}
           <strong className="text-slate-100">스스로 적절한 깊이</strong>를 고르는 규칙입니다.
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>모드</Th>
                 <Th>흐름</Th>
@@ -94,7 +94,7 @@ export default function Lifecycle() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-[12px] text-slate-400 leading-relaxed">
+        <p className="mt-3 text-[13px] text-slate-400 leading-relaxed">
           기본은 에이전트가 자동 선택. 원하는 모드를 직접 지정하고 싶다면 "이건 가볍게
           lite로", "설계 문서까지 full로" 같이 한 줄로 지정하면 됩니다. 파괴적 작업·보안·비용·
           외부 배포는 모드와 무관하게 먼저 확인합니다.
@@ -102,7 +102,7 @@ export default function Lifecycle() {
       </div>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           프롬프트 컨텍스트는 5층으로 쌓입니다
         </p>
         <Layer n="01" name="진입점" color="brand" desc="AGENTS.md · CLAUDE.md · GEMINI.md (룰 포인터)" />
@@ -110,7 +110,7 @@ export default function Lifecycle() {
         <Layer n="03" name="스킬" color="emerald" desc="코드리뷰 · 회의록 · 커밋메시지 등 작업 절차" />
         <Layer n="04" name="프롬프트" color="emerald" desc="검증된 프롬프트 골격 (.agents/prompts/)" />
         <Layer n="05" name="내 요청" color="amber" desc='"이거 해줘" + 목적 · 배경 · 제약 — 여러분이 직접 쓰는 부분' />
-        <p className="mt-3 text-[12px] text-slate-400 leading-relaxed">
+        <p className="mt-3 text-[13px] text-slate-400 leading-relaxed">
           위 4층은 KIT 설치 시 이미 깔려 있습니다. 매번 "보안 지켜 · 출처 남겨 · 커밋 양식"을
           말하지 않아도 자동 적용 — 여러분은 <strong className="text-slate-200">하고 싶은 일만</strong>{" "}
           말하면 됩니다.
@@ -167,12 +167,12 @@ function Layer({
   }[color];
   return (
     <div className={`flex items-start gap-3 rounded-lg border px-3.5 py-2.5 mb-1.5 last:mb-0 ${bg}`}>
-      <span className="shrink-0 font-mono text-[11px] font-bold text-slate-400 mt-0.5">
+      <span className="shrink-0 font-mono text-[12px] font-bold text-slate-400 mt-0.5">
         {n}
       </span>
       <div className="flex-1 min-w-0">
-        <p className={`text-[13.5px] font-semibold ${nameColor}`}>{name}</p>
-        <p className="text-[12.5px] text-slate-300 mt-0.5">{desc}</p>
+        <p className={`text-[14.5px] font-semibold ${nameColor}`}>{name}</p>
+        <p className="text-[13.5px] text-slate-300 mt-0.5">{desc}</p>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export default function Benefit() {
             적용됩니다. 다른 프로젝트에는 영향이 없고, 각자의 컨텍스트에 맞게 따로
             최적화할 수 있습니다.
           </p>
-          <p className="mt-1.5 text-[11.5px] text-slate-500">
+          <p className="mt-1.5 text-[12.5px] text-slate-500">
             글로벌 룰 X → 프로젝트별 룰 ○
           </p>
         </Card>
@@ -41,19 +41,19 @@ export default function Benefit() {
             <li>마케터가 고객 응대 → business 단독</li>
             <li>지원 부서 → minimal로 가볍게 시작</li>
           </ul>
-          <p className="mt-1.5 text-[11.5px] text-slate-500">
+          <p className="mt-1.5 text-[12.5px] text-slate-500">
             한 사람도 프로젝트마다 다른 페르소나 가능.
           </p>
         </Card>
       </CardGrid>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           예상 시나리오 — 페르소나 조합 표
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>상황</Th>
                 <Th>프로필 조합</Th>
@@ -139,7 +139,7 @@ function PRow({
         {scenario}
       </td>
       <td className="px-3.5 py-2.5 align-top whitespace-nowrap">
-        <span className="font-mono text-[12px] text-brand-200">{combo}</span>
+        <span className="font-mono text-[13px] text-brand-200">{combo}</span>
       </td>
       <td className="px-3.5 py-2.5 align-top text-slate-300 leading-relaxed">
         {children}
@@ -152,8 +152,8 @@ function Kpi({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-2xl glass p-5 text-center relative overflow-hidden">
       <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-brand-500/15 blur-2xl pointer-events-none" />
-      <p className="relative text-3xl font-extrabold gradient-text">{value}</p>
-      <p className="relative mt-1.5 text-xs text-slate-400 uppercase tracking-wider">
+      <p className="relative text-[31px] font-extrabold gradient-text">{value}</p>
+      <p className="relative mt-1.5 text-[13px] text-slate-400 uppercase tracking-wider">
         {label}
       </p>
     </div>

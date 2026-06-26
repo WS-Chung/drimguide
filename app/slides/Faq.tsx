@@ -137,9 +137,9 @@ export default function Faq() {
                 className="w-full text-left flex items-start justify-between gap-3 px-4 py-3.5"
                 aria-expanded={isOpen}
               >
-                <span className="flex items-start gap-3 text-[14.5px] font-semibold text-slate-100">
+                <span className="flex items-start gap-3 text-[15.5px] font-semibold text-slate-100">
                   <span
-                    className={`mt-[1px] text-[10px] font-mono ${
+                    className={`mt-[1px] text-[11px] font-mono ${
                       isOpen ? "text-brand-300" : "text-slate-500"
                     }`}
                   >
@@ -148,7 +148,7 @@ export default function Faq() {
                   <span>{f.q}</span>
                 </span>
                 <span
-                  className={`shrink-0 text-brand-300 text-xl leading-none transition-transform ${
+                  className={`shrink-0 text-brand-300 text-[21px] leading-none transition-transform ${
                     isOpen ? "rotate-45" : ""
                   }`}
                   aria-hidden
@@ -157,7 +157,7 @@ export default function Faq() {
                 </span>
               </button>
               {isOpen && (
-                <div className="px-4 pb-4 -mt-1 text-[13.5px] text-slate-300 leading-relaxed pl-[3.25rem]">
+                <div className="px-4 pb-4 -mt-1 text-[14.5px] text-slate-300 leading-relaxed pl-[3.25rem]">
                   {f.a}
                 </div>
               )}

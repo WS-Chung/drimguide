@@ -17,17 +17,17 @@ export default function Install() {
       {/* 상세 가이드 바로가기 — 타이틀 직하 */}
       <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
         <div className="flex-1 min-w-[220px]">
-          <p className="text-[14px] font-semibold text-slate-100">
+          <p className="text-[15px] font-semibold text-slate-100">
             📘 상세 설치 가이드
           </p>
-          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+          <p className="text-[13.5px] text-slate-400 mt-0.5 leading-relaxed">
             준비물 · 설치 흐름 · 트러블슈팅 · 공유 .md 받기까지 한 페이지에 정리한
             풀버전 가이드입니다. 처음이거나 막힌 단계가 있을 때 펼쳐 보세요.
           </p>
         </div>
         <a
           href="#install-guide"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[14.5px] ring-1 ring-brand-400/35 transition"
         >
           상세 가이드 열기 →
         </a>
@@ -37,10 +37,10 @@ export default function Install() {
       <div className="rounded-2xl glass p-4 sm:p-5 relative overflow-hidden">
         <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-brand-500/15 blur-3xl pointer-events-none" />
         <div className="relative">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
+          <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
             KIT 받기 — Google 공유드라이브
           </p>
-          <p className="text-[14px] text-slate-200 leading-relaxed mb-3">
+          <p className="text-[15px] text-slate-200 leading-relaxed mb-3">
             아래 공유드라이브에서{" "}
             <span className="font-mono text-brand-200">company-agent-kit.zip</span>{" "}
             (및 함께 받을 자료)을 받습니다.{" "}
@@ -55,15 +55,15 @@ export default function Install() {
               href={KIT_DRIVE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2.5 text-[13.5px] shadow-glow-sm transition"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2.5 text-[14.5px] shadow-glow-sm transition"
             >
               <DriveIcon /> 공유드라이브 열기 ↗
             </a>
-            <span className="text-[11px] text-slate-500 font-mono break-all">
+            <span className="text-[12px] text-slate-500 font-mono break-all">
               drive.google.com/…/0AApU7x4G-XVWUk9PVA
             </span>
           </div>
-          <p className="mt-3 text-[12px] text-slate-400 leading-relaxed">
+          <p className="mt-3 text-[13px] text-slate-400 leading-relaxed">
             ※ 처음 들어가서 안 보이면 회사 Workspace 계정으로 로그인되어 있는지 확인하세요.
             그래도 안 보이면 담당자에게 한 줄 알려 주시면 즉시 점검합니다.
           </p>
@@ -101,7 +101,7 @@ export default function Install() {
         </Card>
         <Card title="⚙ 개발자용 — 직접 명령" badge="옵션" accent="emerald">
           <p>터미널이 익숙하면 Node.js LTS ≥ 18에서 직접 실행 가능. 압축 푼 폴더 안에서:</p>
-          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[11px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-2">{`# 미리보기 (실제로 아무것도 안 바꿈)
+          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[12px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-2">{`# 미리보기 (실제로 아무것도 안 바꿈)
 node src/cli.js apply --target codex \\
   --profile developer \\
   --project /path/to/repo --dry-run
@@ -114,12 +114,12 @@ node src/cli.js apply --target codex \\
       </CardGrid>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           내 직무에 맞는 프로필 선택
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>직무</Th>
                 <Th>추천 프로필</Th>
@@ -142,7 +142,7 @@ node src/cli.js apply --target codex \\
             </tbody>
           </table>
         </div>
-        <p className="text-[11.5px] text-slate-500 mt-2.5 leading-relaxed">
+        <p className="text-[12.5px] text-slate-500 mt-2.5 leading-relaxed">
           ※ 한 사람이 여러 프로젝트에서 다른 프로필을 쓸 수 있습니다. 프로젝트마다 따로 설치 ·
           따로 최적화하는 것이 KIT의 핵심.
         </p>
@@ -189,7 +189,7 @@ function Row({
       </td>
       <td className="px-3.5 py-2.5 align-top whitespace-nowrap">
         <span
-          className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11.5px] font-mono font-semibold ${chipColor}`}
+          className={`inline-flex items-center px-2 py-0.5 rounded-md text-[12.5px] font-mono font-semibold ${chipColor}`}
         >
           {profile}
         </span>

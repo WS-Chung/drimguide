@@ -17,10 +17,10 @@ export default function InstallGuide() {
     >
       {/* 0. 마음 편히 가지기 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           0. 먼저, 마음 편히 가지세요
         </p>
-        <p className="text-[14px] text-slate-200 leading-relaxed">
+        <p className="text-[15px] text-slate-200 leading-relaxed">
           핵심은 딱 하나입니다 —{" "}
           <strong className="text-slate-50">
             설치는 사람이 하지 않고, AI에게 부탁하면 AI가 합니다.
@@ -40,10 +40,10 @@ export default function InstallGuide() {
 
       {/* KIT 다운로드 다시 노출 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           KIT 받기 (공유드라이브)
         </p>
-        <p className="text-[13.5px] text-slate-200 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-200 leading-relaxed mb-3">
           모든 인원이 <strong className="text-slate-100">콘텐츠 관리자</strong>로 등록되어
           있어 자유롭게 읽고 쓸 수 있습니다.
         </p>
@@ -51,7 +51,7 @@ export default function InstallGuide() {
           href={KIT_DRIVE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2.5 text-[13.5px] shadow-glow-sm transition"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2.5 text-[14.5px] shadow-glow-sm transition"
         >
           공유드라이브 열기 ↗
         </a>
@@ -59,12 +59,12 @@ export default function InstallGuide() {
 
       {/* 1. 준비물 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1. 준비물 확인
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>준비물</Th>
                 <Th>설명</Th>
@@ -113,7 +113,7 @@ export default function InstallGuide() {
 
       {/* 2. 설치 흐름 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2. 설치하기
         </p>
         <BlockFlow
@@ -140,7 +140,7 @@ export default function InstallGuide() {
             <span className="font-mono text-brand-200">SETUP_WIZARD.md</span>를 열어
             내용을 복사한 뒤, AI 대화창에 붙여넣고 이렇게 말합니다:{" "}
             <Say>이걸 읽고 내 설치를 도와줘.</Say>
-            <p className="mt-1.5 text-[12px] text-slate-500">
+            <p className="mt-1.5 text-[13px] text-slate-500">
               파일 첨부가 되는 도구라면 SETUP_WIZARD.md를 그냥 첨부해도 됩니다.
             </p>
           </Step>
@@ -169,16 +169,16 @@ export default function InstallGuide() {
       </Callout>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           내 직무에는 어떤 걸 설치하나요?
         </p>
-        <p className="text-[13.5px] text-slate-300 mb-3 leading-relaxed">
+        <p className="text-[14.5px] text-slate-300 mb-3 leading-relaxed">
           AI가 알아서 추천하지만, 미리 알아두면 좋습니다. (“profile”은 직무에 맞는 설정
           묶음이라는 뜻)
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>내 직무</Th>
                 <Th>추천 설정</Th>
@@ -204,17 +204,17 @@ export default function InstallGuide() {
       </div>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           개발자용 — 직접 명령으로 설치하기
         </p>
-        <p className="text-[13px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14px] text-slate-300 leading-relaxed mb-3">
           터미널이 익숙하다면 AI를 거치지 않고 <code>node</code> 명령으로 바로 설치할 수
           있습니다. (전제: Node.js LTS ≥ 18). 압축을 푼{" "}
           <span className="font-mono text-brand-200">company-agent-kit</span> 폴더 안에서
           실행하고, <code>--project</code>에는 설정을 설치할 실제 프로젝트 경로를
           적습니다.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`# 무엇을 설치할 수 있는지 / 환경·번들 진단
+        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`# 무엇을 설치할 수 있는지 / 환경·번들 진단
 node src/cli.js list
 node src/cli.js doctor --project /path/to/repo
 
@@ -231,7 +231,7 @@ node src/cli.js apply --target codex \\
 # 사용자 전역(home/global) 설치
 node src/cli.js apply --target claude \\
   --profile developer --scope home`}</pre>
-        <p className="mt-2.5 text-[12px] text-slate-500 leading-relaxed">
+        <p className="mt-2.5 text-[13px] text-slate-500 leading-relaxed">
           이미 agent 설정이 있는 프로젝트라면 기존 설정 우선 병합 모드를 추천:{" "}
           <code>--conflict-policy preserve-existing --backup</code>. Windows에서는{" "}
           <code>node src\cli.js apply --target codex --project &quot;%CD%&quot;
@@ -242,24 +242,24 @@ node src/cli.js apply --target claude \\
 
       {/* 3. 공유 .md 받기 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3. 공유 .md 받기 — AI-Knowhow 폴더
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           설치 후 다른 사람이 공유한 프롬프트·스킬·문서를 받을 때는 이름을 Google Drive와
           똑같이 맞춘{" "}
           <span className="font-mono text-brand-200">AI-Knowhow/</span> 폴더를 씁니다.
           점(.)으로 시작하지 않아서 Windows에서도 찾기 쉽습니다.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[12px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`AI-Knowhow/skills/
+        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[13px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`AI-Knowhow/skills/
 AI-Knowhow/prompts/
 AI-Knowhow/docs/`}</pre>
-        <p className="mt-2.5 text-[13px] text-slate-200">AI에게 이렇게 요청하면 됩니다:</p>
+        <p className="mt-2.5 text-[14px] text-slate-200">AI에게 이렇게 요청하면 됩니다:</p>
         <Say>
           AI-Knowhow/prompts 폴더의 .md를 가져와서 내 프로젝트 AI-Knowhow/에 저장하고
           보안검사해줘.
         </Say>
-        <p className="mt-2.5 text-[12px] text-slate-500 leading-relaxed">
+        <p className="mt-2.5 text-[13px] text-slate-500 leading-relaxed">
           ※ 받은 파일은 곧바로 공식 rule이나 skill로 덮어쓰지 않습니다. AI가{" "}
           <strong className="text-slate-300">
             민감정보 · credential · 고객 데이터 · 출처 누락 · 기존 파일 충돌
@@ -283,7 +283,7 @@ AI-Knowhow/docs/`}</pre>
 
       {/* 5. 트러블슈팅 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           5. 막히면 — 이렇게 해결하세요
         </p>
         <div className="space-y-2">
@@ -327,7 +327,7 @@ AI-Knowhow/docs/`}</pre>
         </Callout>
       </div>
 
-      <p className="text-[11.5px] text-slate-500 leading-relaxed">
+      <p className="text-[12.5px] text-slate-500 leading-relaxed">
         출처: 이 부록은 번들의 <span className="font-mono">SETUP_WIZARD.md</span>와{" "}
         <span className="font-mono">docs/non-developer-guide.md</span>를 다크 테마로 옮긴
         것입니다. 막히면 담당자 또는 공유 드라이브{" "}
@@ -374,12 +374,12 @@ function Step({
 }) {
   return (
     <li className="flex gap-3 items-start py-2.5 px-3.5 rounded-lg bg-ink-800/50 border border-slate-800/60">
-      <span className="shrink-0 grid place-items-center h-7 w-7 rounded-md bg-brand-500/20 text-brand-200 font-mono text-[12px] font-bold ring-1 ring-brand-400/30">
+      <span className="shrink-0 grid place-items-center h-7 w-7 rounded-md bg-brand-500/20 text-brand-200 font-mono text-[13px] font-bold ring-1 ring-brand-400/30">
         {n}
       </span>
       <div className="flex-1">
-        <p className="font-semibold text-slate-100 text-[13.5px] mb-1">{title}</p>
-        <div className="text-[12.5px] text-slate-300 leading-relaxed">{children}</div>
+        <p className="font-semibold text-slate-100 text-[14.5px] mb-1">{title}</p>
+        <div className="text-[13.5px] text-slate-300 leading-relaxed">{children}</div>
       </div>
     </li>
   );
@@ -387,7 +387,7 @@ function Step({
 
 function Say({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block bg-brand-500/15 border border-brand-400/30 text-brand-100 rounded-lg px-2.5 py-1 my-1 text-[12.5px]">
+    <span className="inline-block bg-brand-500/15 border border-brand-400/30 text-brand-100 rounded-lg px-2.5 py-1 my-1 text-[13.5px]">
       💬 {children}
     </span>
   );
@@ -417,7 +417,7 @@ function ProfileRow({
       </td>
       <td className="px-3.5 py-2.5 align-top whitespace-nowrap">
         <span
-          className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11.5px] font-mono font-semibold ${chip}`}
+          className={`inline-flex items-center px-2 py-0.5 rounded-md text-[12.5px] font-mono font-semibold ${chip}`}
         >
           {profile}
         </span>
@@ -438,10 +438,10 @@ function Trouble({
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-[14rem_1fr] rounded-lg overflow-hidden border border-slate-800/60">
-      <div className="bg-amber-500/10 text-amber-200 font-semibold text-[12.5px] px-3.5 py-2.5">
+      <div className="bg-amber-500/10 text-amber-200 font-semibold text-[13.5px] px-3.5 py-2.5">
         {q}
       </div>
-      <div className="bg-ink-800/40 text-slate-300 text-[12.5px] px-3.5 py-2.5 leading-relaxed">
+      <div className="bg-ink-800/40 text-slate-300 text-[13.5px] px-3.5 py-2.5 leading-relaxed">
         {children}
       </div>
     </div>

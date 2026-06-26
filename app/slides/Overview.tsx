@@ -23,7 +23,7 @@ export default function Overview() {
           상향식 진화 방식입니다.
         </p>
 
-        <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
+        <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
           <Fact label="Claude 계정" value="8" suffix="개" hint="개인용 그대로" />
           <Fact label="KIT 프로필" value="4" suffix="종" hint="minimal · dev · product · business" />
           <Fact label="지식 공유 채널" value="1" suffix="곳" hint="Google 공유드라이브만" />
@@ -31,7 +31,7 @@ export default function Overview() {
         </dl>
 
         <div className="mt-10">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-slate-500 mb-3">
+          <p className="text-[12px] uppercase tracking-[0.18em] text-slate-500 mb-3">
             가이드 흐름 한눈에
           </p>
           <BlockFlow
@@ -46,7 +46,7 @@ export default function Overview() {
           />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3">
           <Pillar title="자율 활용" body="회사가 룰을 내리지 않습니다. 도구를 받고 자유롭게 써본 뒤, 좋은 방법을 공유합니다." />
           <Pillar title="프로젝트 최적화" body="하나의 룰로 모든 직무·프로젝트를 커버할 수 없습니다. KIT는 매 프로젝트마다 따로 설치·최적화됩니다." />
           <Pillar title="페르소나 구성" body="개발·PM·마케터·지원 등 사용 목적에 맞춰 KIT 프로필을 선택해 목표에 맞는 AI 페르소나를 만듭니다." />
@@ -69,15 +69,15 @@ function Fact({
 }) {
   return (
     <div className="rounded-xl glass px-3.5 py-3 backdrop-blur">
-      <dt className="text-[10.5px] uppercase tracking-wider text-slate-400">
+      <dt className="text-[11.5px] uppercase tracking-wider text-slate-400">
         {label}
       </dt>
-      <dd className="mt-1 text-2xl font-bold text-slate-50">
+      <dd className="mt-1 text-[25px] font-bold text-slate-50">
         {value}
-        {suffix && <span className="text-sm text-slate-400 ml-1">{suffix}</span>}
+        {suffix && <span className="text-[15px] text-slate-400 ml-1">{suffix}</span>}
       </dd>
       {hint && (
-        <p className="mt-1 text-[10.5px] text-slate-500 leading-tight">{hint}</p>
+        <p className="mt-1 text-[11.5px] text-slate-500 leading-tight">{hint}</p>
       )}
     </div>
   );
@@ -86,8 +86,8 @@ function Fact({
 function Pillar({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-xl glass p-4">
-      <p className="text-[13.5px] font-semibold text-slate-100 mb-1.5">{title}</p>
-      <p className="text-[12.5px] text-slate-400 leading-relaxed">{body}</p>
+      <p className="text-[14.5px] font-semibold text-slate-100 mb-1.5">{title}</p>
+      <p className="text-[13.5px] text-slate-400 leading-relaxed">{body}</p>
     </div>
   );
 }

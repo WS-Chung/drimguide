@@ -71,7 +71,7 @@ export default function HomeShell() {
     <div className="min-h-screen flex">
       <Sidebar activeId={activeId} onSelect={setActiveId} />
       <main ref={mainRef} className="flex-1 min-w-0 relative">
-        <div key={activeId} className="max-w-6xl mx-auto">
+        <div key={activeId} className="max-w-[82rem] mx-auto">
           <Slide />
         </div>
 

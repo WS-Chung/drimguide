@@ -12,7 +12,7 @@ export default function Ideal() {
       description="좋은 결과의 80%는 잘 부탁하기에서 나옵니다. 네 가지(목적·대상·배경·제약)만 챙기면 됩니다. 그리고 잘 동작한 결과는 회사 자산으로 흘려보내고, 막힌 케이스도 똑같이 공유합니다."
     >
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           좋은 요청의 4요소
         </p>
         <BlockFlow
@@ -28,25 +28,25 @@ export default function Ideal() {
 
       <CardGrid cols={2}>
         <Card title="🙅 막연한 요청 — 결과 품질 ↓" accent="rose">
-          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-rose-400/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 회의록 정리해줘.`}</pre>
-          <ul className="list-disc pl-5 mt-2 space-y-0.5 text-[12.5px]">
+          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-rose-400/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 회의록 정리해줘.`}</pre>
+          <ul className="list-disc pl-5 mt-2 space-y-0.5 text-[13.5px]">
             <li>회의록이 어디 있나?</li>
             <li>누가 읽는 요약인가? (임원/팀)</li>
             <li>어떤 형식? (불릿/표/문장)</li>
             <li>액션 아이템 표기 룰은?</li>
           </ul>
-          <p className="text-[11.5px] text-slate-500 mt-2">
+          <p className="text-[12.5px] text-slate-500 mt-2">
             → AI가 추정으로 채워서 답하므로 매번 결과가 달라짐.
           </p>
         </Card>
         <Card title="🙆 잘 부탁한 요청 — 일관된 결과" accent="emerald">
-          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-emerald-400/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 [목적] 어제 회의록을 임원 보고용
+          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-emerald-400/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 [목적] 어제 회의록을 임원 보고용
 요약으로
 [대상] CTO 한 명
 [배경] 첨부 회의록.docx (45분 분량)
 [제약] 5줄 이내 + 액션 아이템 표
        민감 고객사명은 [REDACTED]로`}</pre>
-          <p className="text-[11.5px] text-slate-500 mt-2">
+          <p className="text-[12.5px] text-slate-500 mt-2">
             → 같은 패턴으로 부탁하면 결과가 안정적. 잘 동작한 이 프롬프트를 .md로 저장해서
             공유 = 다음 사람의 출발점이 됨.
           </p>
@@ -54,7 +54,7 @@ export default function Ideal() {
       </CardGrid>
 
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           노하우를 자산으로 — 흐름
         </p>
         <BlockFlow
@@ -84,7 +84,7 @@ export default function Ideal() {
             <li>주의 사항</li>
             <li>출처(있다면) · 작성자</li>
           </ul>
-          <p className="mt-1.5 text-[11.5px] text-slate-500">
+          <p className="mt-1.5 text-[12.5px] text-slate-500">
             AI에게 형식을 만들어 달라고 부탁해도 됩니다.
           </p>
         </Card>

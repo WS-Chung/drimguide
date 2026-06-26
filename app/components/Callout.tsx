@@ -28,14 +28,14 @@ export default function Callout({
   return (
     <div className={`rounded-xl border backdrop-blur-md p-3.5 sm:p-4 ${styles[variant]}`}>
       {title && (
-        <p className="font-semibold mb-1 flex items-center gap-2 text-[14px]">
+        <p className="font-semibold mb-1 flex items-center gap-2 text-[15px]">
           <span aria-hidden className="opacity-80">
             {icons[variant]}
           </span>
           <span>{title}</span>
         </p>
       )}
-      <div className="text-[13.5px] leading-relaxed text-slate-200">{children}</div>
+      <div className="text-[14.5px] leading-relaxed text-slate-200">{children}</div>
     </div>
   );
 }

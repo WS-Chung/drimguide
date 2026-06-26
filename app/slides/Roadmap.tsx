@@ -11,7 +11,7 @@ export default function Roadmap() {
       description="처음부터 모든 룰을 정해두지 않습니다. 각자 KIT로 써본 노하우를 모으고, 검증된 것만 정식 스킬·프롬프트로 승격해 다음 KIT 배포본에 반영합니다. 상향식 진화 모델입니다."
     >
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           5단계 진화 흐름
         </p>
         <BlockFlow
@@ -115,22 +115,22 @@ function Phase({
     >
       <div className="flex items-center gap-2 mb-2 flex-wrap">
         <span
-          className={`text-[10px] font-mono font-semibold tracking-wider ${
+          className={`text-[11px] font-mono font-semibold tracking-wider ${
             active ? "text-brand-200" : "text-slate-500"
           }`}
         >
           {tag}
         </span>
         {active && (
-          <span className="text-[9.5px] px-1.5 py-0.5 rounded font-bold tracking-wider uppercase bg-brand-400/30 text-brand-100">
+          <span className="text-[10.5px] px-1.5 py-0.5 rounded font-bold tracking-wider uppercase bg-brand-400/30 text-brand-100">
             Current
           </span>
         )}
       </div>
-      <p className={`font-semibold mb-2 text-[14px] ${active ? "text-slate-50" : "text-slate-200"}`}>
+      <p className={`font-semibold mb-2 text-[15px] ${active ? "text-slate-50" : "text-slate-200"}`}>
         {title}
       </p>
-      <ul className="text-[12.5px] space-y-1 list-disc pl-4">
+      <ul className="text-[13.5px] space-y-1 list-disc pl-4">
         {items.map((it, i) => (
           <li key={i} className={active ? "text-slate-200" : "text-slate-400"}>
             {it}

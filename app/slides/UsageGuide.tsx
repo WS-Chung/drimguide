@@ -24,10 +24,10 @@ export default function UsageGuide() {
     >
       {/* 0. 큰 그림 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           0. 이 매뉴얼을 보는 법
         </p>
-        <p className="text-[14px] text-slate-200 leading-relaxed mb-3">
+        <p className="text-[15px] text-slate-200 leading-relaxed mb-3">
           기억할 것은 세 가지입니다 —{" "}
           <strong className="text-slate-50">① 에이전트가 어떻게 일하는지 알고</strong>,{" "}
           <strong className="text-slate-50">② 잘 부탁하는 요령을 익히고</strong>,{" "}
@@ -52,10 +52,10 @@ export default function UsageGuide() {
 
       {/* 1. 라이프사이클 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1. 에이전트의 라이프사이클
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           요청 한 건이 결과로 나오기까지, 에이전트 안에서는 정해진 흐름이 돕니다. 이걸 알면
           “왜 이렇게 답하지?”가 이해됩니다.
         </p>
@@ -73,10 +73,10 @@ export default function UsageGuide() {
 
       {/* 1.1 SDD */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1.1 SDD 소개 — 같은 흐름, 다른 깊이
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           SDD(Spec Driven Development)는 “문서부터 쓰는 무거운 방법론”이 아닙니다. 매번
           질문으로 멈추지 않도록 에이전트가 요청의 무게를 보고{" "}
           <strong className="text-slate-100">스스로 적절한 깊이</strong>를 고르는 규칙입니다.
@@ -84,8 +84,8 @@ export default function UsageGuide() {
           얼마나 압축하느냐</strong>의 차이입니다.
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>모드</Th>
                 <Th>흐름</Th>
@@ -146,10 +146,10 @@ export default function UsageGuide() {
 
       {/* 1.2 프롬프트 적용 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1.2 프롬프트가 적용되는 과정 — 5층으로 쌓입니다
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           에이전트가 보는 “지시”는 내 한 줄 요청만이 아닙니다. 회사 표준이 여러 겹으로 미리
           깔려 있고, 그 위에 내 요청이 얹힙니다.
         </p>
@@ -192,10 +192,10 @@ export default function UsageGuide() {
 
       {/* 2. 대화 요령 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2. 에이전트와의 대화 요령
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           좋은 결과의 80%는 “잘 부탁하기”에서 나옵니다. 네 가지만 챙기면 됩니다.
         </p>
         <BlockFlow
@@ -211,25 +211,25 @@ export default function UsageGuide() {
 
       <CardGrid cols={2}>
         <Card title="🙅 막연한 요청 — 결과 품질 ↓" accent="rose">
-          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-rose-400/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 회의록 정리해줘.`}</pre>
-          <ul className="list-disc pl-5 mt-2 space-y-0.5 text-[12.5px]">
+          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-rose-400/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 회의록 정리해줘.`}</pre>
+          <ul className="list-disc pl-5 mt-2 space-y-0.5 text-[13.5px]">
             <li>회의록이 어디 있나?</li>
             <li>누가 읽는 요약인가? (임원/팀)</li>
             <li>어떤 형식? (불릿/표/문장)</li>
             <li>액션 아이템 표기 룰은?</li>
           </ul>
-          <p className="text-[11.5px] text-slate-500 mt-2">
+          <p className="text-[12.5px] text-slate-500 mt-2">
             → AI가 추정으로 채워서 답하므로 매번 결과가 달라짐.
           </p>
         </Card>
         <Card title="🙆 잘 부탁한 요청 — 일관된 결과" accent="emerald">
-          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-emerald-400/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 [목적] 어제 회의록을 임원 보고용
+          <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-emerald-400/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1">{`💬 [목적] 어제 회의록을 임원 보고용
 요약으로
 [대상] CTO 한 명
 [배경] 첨부 회의록.docx (45분 분량)
 [제약] 5줄 이내 + 액션 아이템 표
        민감 고객사명은 [REDACTED]로`}</pre>
-          <p className="text-[11.5px] text-slate-500 mt-2">
+          <p className="text-[12.5px] text-slate-500 mt-2">
             → 같은 패턴으로 부탁하면 결과가 안정적. 잘 동작한 이 프롬프트를 .md로 저장해
             공유 = 다음 사람의 출발점이 됨.
           </p>
@@ -238,15 +238,15 @@ export default function UsageGuide() {
 
       {/* 2.2 프롬프트 예시 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2.2 프롬프트 예시 — 골격 활용
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-2">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-2">
           실제 골격 하나를 보면 감이 옵니다. 아래는{" "}
           <span className="font-mono text-brand-200">dev-implementation.md</span>의 구조 —
           <strong className="text-brand-200"> 대괄호 부분만</strong> 채우면 됩니다.
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3.5 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`개발 구현 프롬프트 (dev-implementation)
+        <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3.5 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre">{`개발 구현 프롬프트 (dev-implementation)
 ─────────────────────────────────
 당신은 Senior Software Engineer이다.
 다음 요구사항을 구현한다.
@@ -262,12 +262,12 @@ export default function UsageGuide() {
 
 ## 출력
 1. 설계   2. 코드   3. 설명   4. 개선점`}</pre>
-        <p className="text-[13px] text-slate-200 mt-3 mb-2">
+        <p className="text-[14px] text-slate-200 mt-3 mb-2">
           직무별로 자주 쓰는 한 줄 요청 예시:
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>직무</Th>
                 <Th>이렇게 말하면 됩니다</Th>
@@ -309,10 +309,10 @@ export default function UsageGuide() {
 
       {/* 3. 지식 공유 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3. 지식 공유 방법
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           남이 만든 좋은 프롬프트·스킬을 <strong className="text-slate-100">가져오고</strong>
           , 검증된 건 <strong className="text-slate-100">승격</strong>하고, 내 노하우는{" "}
           <strong className="text-slate-100">내보냅니다</strong>. 이 순환이 회사 AI 자산을
@@ -335,7 +335,7 @@ export default function UsageGuide() {
 
       {/* 3.1 가져오기 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.1 가져오기 — 다운로드 / MD 복사
         </p>
         <ol className="space-y-2">
@@ -357,7 +357,7 @@ export default function UsageGuide() {
           </Step>
           <Step n={3} title="검역 구역에 두기">
             받은 파일은 곧장 쓰지 않고 아래 위치에 둡니다 — “검증 전 공유본” 보관소.
-            <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1.5">{`AI-Knowhow/skills/
+            <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1.5">{`AI-Knowhow/skills/
 AI-Knowhow/prompts/
 AI-Knowhow/docs/`}</pre>
           </Step>
@@ -388,16 +388,16 @@ AI-Knowhow/docs/`}</pre>
 
       {/* 3.2 승격 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.2 승격 및 사용 방법
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           검역 구역의 자료가 여러 사람·여러 작업에서 반복적으로 잘 쓰이면, 운영자 검토를
           거쳐 공식 자산으로 승격합니다.
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800/70 bg-ink-800/40 backdrop-blur">
-          <table className="min-w-full text-[13px]">
-            <thead className="bg-ink-700/40 text-slate-400 text-[11px] uppercase tracking-wider">
+          <table className="min-w-full text-[14px]">
+            <thead className="bg-ink-700/40 text-slate-400 text-[12px] uppercase tracking-wider">
               <tr>
                 <Th>상태</Th>
                 <Th>위치</Th>
@@ -436,7 +436,7 @@ AI-Knowhow/docs/`}</pre>
             </tbody>
           </table>
         </div>
-        <p className="text-[13px] text-slate-200 mt-3 mb-1.5">
+        <p className="text-[14px] text-slate-200 mt-3 mb-1.5">
           승격 게이트 (기본값 — governance가 바꾸지 않는 한):
         </p>
         <div className="flex flex-wrap gap-2">
@@ -449,19 +449,19 @@ AI-Knowhow/docs/`}</pre>
           ].map((g) => (
             <span
               key={g}
-              className="text-[12px] bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/30 rounded-md px-2.5 py-1"
+              className="text-[13px] bg-brand-500/15 text-brand-200 ring-1 ring-brand-400/30 rounded-md px-2.5 py-1"
             >
               {g}
             </span>
           ))}
         </div>
-        <p className="text-[12.5px] text-slate-400 mt-2.5 leading-relaxed">
+        <p className="text-[13.5px] text-slate-400 mt-2.5 leading-relaxed">
           승격은 에이전트가 단독으로 “공식”이라 선언하지 않습니다. 게이트 충족 +{" "}
           <strong className="text-slate-200">운영자 수동 검토</strong>를 거칩니다.
         </p>
         <Say>이 프롬프트, 승격해도 될지 게이트 기준으로 점검하고 승격 제안 정리해줘.</Say>
 
-        <p className="mt-4 mb-2 text-[13.5px] text-amber-200 font-semibold">
+        <p className="mt-4 mb-2 text-[14.5px] text-amber-200 font-semibold">
           ⚠ 승격 없이 그냥 쓰면 — 한계점
         </p>
         <CardGrid cols={2}>
@@ -490,10 +490,10 @@ AI-Knowhow/docs/`}</pre>
 
       {/* 3.3 내보내기 */}
       <div className="rounded-2xl glass p-4 sm:p-5">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
+        <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.3 내보내기 — 업로드 / MD 추출
         </p>
-        <p className="text-[13.5px] text-slate-300 leading-relaxed mb-3">
+        <p className="text-[14.5px] text-slate-300 leading-relaxed mb-3">
           내가 잘 쓴 프롬프트·스킬·노하우를 회사 공유 채널로 올리는 단계입니다. 에이전트가
           먼저 <strong className="text-slate-100">정제(민감정보 제거·출처·frontmatter)</strong>
           를 도와준 뒤 올립니다.
@@ -502,7 +502,7 @@ AI-Knowhow/docs/`}</pre>
           <Step n={1} title="자산화 요청 (MD 추출)">
             대화에 흩어진 내용을 재사용 가능한 .md 한 장으로 뽑아냅니다.
             <Say>방금 그 프롬프트, 공유할 수 있게 .md로 정리해줘.</Say>
-            <p className="text-[12px] text-slate-500 mt-1">
+            <p className="text-[13px] text-slate-500 mt-1">
               에이전트가 “프롬프트인지 스킬인지” 분류하고, 회사 골격(역할·목적·대상·배경·
               제약·출력)에 맞춰 본문을 정돈합니다.
             </p>
@@ -521,7 +521,7 @@ AI-Knowhow/docs/`}</pre>
               <DriveLink href={DRIVE.skills} label="AI-Knowhow / skills" />
               <DriveLink href={DRIVE.root} label="AI-Knowhow (상위)" />
             </div>
-            <p className="text-[12px] text-slate-500 mt-1.5 leading-relaxed">
+            <p className="text-[13px] text-slate-500 mt-1.5 leading-relaxed">
               폴더 이름으로 검색하면 동명 결과가 많이 나옵니다. 위 바로가기 링크로
               여세요(에이전트는 folder ID로 범위를 좁힙니다). 공유드라이브 멤버여야 보입니다.
             </p>
@@ -529,7 +529,7 @@ AI-Knowhow/docs/`}</pre>
           <Step n={4} title="이력 남기기 — GitHub 후보 브랜치">
             변경 이력·중복 관리를 위해 후보 브랜치에도 남깁니다. (
             <span className="font-mono">main</span> 직접 push 아님)
-            <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[11.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1.5">{`prompts → uploads/prompts/<name>.md
+            <pre className="overflow-x-auto rounded-lg bg-ink-950/85 border border-brand-500/20 p-3 text-[12.5px] leading-relaxed text-slate-200 font-mono whitespace-pre mt-1.5">{`prompts → uploads/prompts/<name>.md
 skills  → uploads/skills/<skill-name>/SKILL.md`}</pre>
           </Step>
         </ol>
@@ -583,7 +583,7 @@ skills  → uploads/skills/<skill-name>/SKILL.md`}</pre>
         </div>
       </Callout>
 
-      <p className="text-[11.5px] text-slate-500 leading-relaxed">
+      <p className="text-[12.5px] text-slate-500 leading-relaxed">
         출처: 이 부록은 번들의 <span className="font-mono">SETUP_WIZARD.md</span>,{" "}
         <span className="font-mono">docs/SHARED_FOLDER_GUIDE.md</span>,{" "}
         <span className="font-mono">
@@ -615,7 +615,7 @@ function Td({ children }: { children: React.ReactNode }) {
 }
 function Say({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block bg-brand-500/15 border border-brand-400/30 text-brand-100 rounded-lg px-2.5 py-1 my-1 mr-1 text-[12.5px]">
+    <span className="inline-block bg-brand-500/15 border border-brand-400/30 text-brand-100 rounded-lg px-2.5 py-1 my-1 mr-1 text-[13.5px]">
       💬 {children}
     </span>
   );
@@ -631,12 +631,12 @@ function Step({
 }) {
   return (
     <li className="flex gap-3 items-start py-2.5 px-3.5 rounded-lg bg-ink-800/50 border border-slate-800/60">
-      <span className="shrink-0 grid place-items-center h-7 w-7 rounded-md bg-brand-500/20 text-brand-200 font-mono text-[12px] font-bold ring-1 ring-brand-400/30">
+      <span className="shrink-0 grid place-items-center h-7 w-7 rounded-md bg-brand-500/20 text-brand-200 font-mono text-[13px] font-bold ring-1 ring-brand-400/30">
         {n}
       </span>
       <div className="flex-1">
-        <p className="font-semibold text-slate-100 text-[13.5px] mb-1">{title}</p>
-        <div className="text-[12.5px] text-slate-300 leading-relaxed">{children}</div>
+        <p className="font-semibold text-slate-100 text-[14.5px] mb-1">{title}</p>
+        <div className="text-[13.5px] text-slate-300 leading-relaxed">{children}</div>
       </div>
     </li>
   );
@@ -666,12 +666,12 @@ function Layer({
     <div
       className={`flex items-start gap-3 rounded-lg border px-3.5 py-2.5 mb-1.5 last:mb-0 ${bg}`}
     >
-      <span className="shrink-0 font-mono text-[11px] font-bold text-slate-400 mt-0.5">
+      <span className="shrink-0 font-mono text-[12px] font-bold text-slate-400 mt-0.5">
         {n}
       </span>
       <div className="flex-1 min-w-0">
-        <p className={`text-[13.5px] font-semibold ${nameColor}`}>{name}</p>
-        <p className="text-[12.5px] text-slate-300 mt-0.5">{desc}</p>
+        <p className={`text-[14.5px] font-semibold ${nameColor}`}>{name}</p>
+        <p className="text-[13.5px] text-slate-300 mt-0.5">{desc}</p>
       </div>
     </div>
   );
@@ -691,7 +691,7 @@ function Chip({
       : "bg-slate-600/40 text-slate-200 ring-1 ring-slate-500/40";
   return (
     <span
-      className={`inline-flex items-center px-2 py-0.5 rounded-md text-[11.5px] font-mono font-semibold ${cls}`}
+      className={`inline-flex items-center px-2 py-0.5 rounded-md text-[12.5px] font-mono font-semibold ${cls}`}
     >
       {children}
     </span>
@@ -719,9 +719,9 @@ function DriveLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-100 ring-1 ring-emerald-400/30 px-2.5 py-1 text-[12.5px] font-semibold transition"
+      className="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-100 ring-1 ring-emerald-400/30 px-2.5 py-1 text-[13.5px] font-semibold transition"
     >
-      📁 {label} <span className="text-[11px] text-emerald-300">↗</span>
+      📁 {label} <span className="text-[12px] text-emerald-300">↗</span>
     </a>
   );
 }
