@@ -27,9 +27,15 @@ export default function Install() {
         </div>
         <a
           href="#install-guide"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[14.5px] ring-1 ring-brand-400/35 transition"
+          className="group inline-flex items-center gap-2.5 rounded-xl bg-brand-500/35 hover:bg-brand-500/55 text-brand-50 font-semibold px-5 py-3 text-[15px] ring-2 ring-brand-400/60 hover:ring-brand-300/90 shadow-[0_0_16px_rgba(27,187,204,0.3)] hover:shadow-[0_0_28px_rgba(27,187,204,0.55)] hover:-translate-y-0.5 transition-all"
         >
-          상세 가이드 열기 →
+          상세 가이드 열기
+          <span
+            className="inline-block transition-transform group-hover:translate-x-1"
+            aria-hidden
+          >
+            →
+          </span>
         </a>
       </div>
 

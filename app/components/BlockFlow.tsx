@@ -21,7 +21,7 @@ export default function BlockFlow({
         {items.map((it, i) => (
           <Fragment key={i}>
             <div
-              className={`block-flow-card sm:flex-1 sm:min-w-0 ${
+              className={`block-flow-card sm:flex-[4] sm:min-w-0 ${
                 compact ? "py-2" : ""
               }`}
             >
@@ -69,25 +69,37 @@ function Connector() {
         />
         <polygon points="9,19 3,11 15,11" fill="currentColor" />
       </svg>
-      {/* 데스크톱: 가로 화살표 */}
-      <svg
-        width="22"
-        height="24"
-        viewBox="0 0 22 24"
-        className="hidden sm:block self-center text-slate-500 shrink-0 mx-0.5"
+      {/* 데스크톱: 가로 화살표 — 블록 사이 공간을 채우도록 늘어남 */}
+      <div
+        className="hidden sm:flex sm:flex-[1] sm:min-w-[24px] items-center self-center text-slate-500"
         aria-hidden
       >
-        <line
-          x1="2"
-          y1="12"
-          x2="14"
-          y2="12"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="flow-line-anim-h"
-        />
-        <polygon points="22,12 12,7 12,17" fill="currentColor" />
-      </svg>
+        <svg
+          viewBox="0 0 100 14"
+          preserveAspectRatio="none"
+          className="flex-1 h-3.5 min-w-0"
+        >
+          <line
+            x1="0"
+            y1="7"
+            x2="100"
+            y2="7"
+            stroke="currentColor"
+            strokeWidth="2"
+            vectorEffect="non-scaling-stroke"
+            className="flow-line-anim-h"
+          />
+        </svg>
+        <svg
+          width="11"
+          height="14"
+          viewBox="0 0 11 14"
+          className="shrink-0"
+          aria-hidden
+        >
+          <polygon points="11,7 0,1 0,13" fill="currentColor" />
+        </svg>
+      </div>
     </>
   );
 }
