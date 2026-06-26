@@ -3,14 +3,54 @@ import BlockFlow from "@/app/components/BlockFlow";
 import { Card, CardGrid } from "@/app/components/Card";
 import Callout from "@/app/components/Callout";
 
+const KIT_DRIVE_URL =
+  "https://drive.google.com/drive/u/0/folders/0AApU7x4G-XVWUk9PVA";
+
 export default function Install() {
   return (
     <SlideShell
       number="04"
       eyebrow="INSTALL · KIT 설치"
       title="KIT 설치 — AI에게 부탁하면 끝납니다"
-      description="명령어를 외울 필요 없습니다. 압축을 푼 폴더 안의 SETUP_WIZARD.md를 AI에게 건네면, AI가 직무·도구·프로젝트 폴더를 묻고 미리보기까지 보여준 뒤 설치합니다. 자세한 시각 가이드는 첨부된 INSTALL_GUIDE.html을 참고하세요."
+      description="명령어를 외울 필요 없습니다. 압축을 푼 폴더 안의 SETUP_WIZARD.md를 AI에게 건네면, AI가 직무·도구·프로젝트 폴더를 묻고 미리보기까지 보여준 뒤 설치합니다."
     >
+      {/* KIT 다운로드 — Google 공유드라이브 */}
+      <div className="rounded-2xl glass p-4 sm:p-5 relative overflow-hidden">
+        <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-brand-500/15 blur-3xl pointer-events-none" />
+        <div className="relative">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
+            KIT 받기 — Google 공유드라이브
+          </p>
+          <p className="text-[14px] text-slate-200 leading-relaxed mb-3">
+            아래 공유드라이브에서{" "}
+            <span className="font-mono text-brand-200">company-agent-kit.zip</span>{" "}
+            (및 함께 받을 자료)을 받습니다.{" "}
+            <strong className="text-slate-100">
+              우리 회사 모든 인원은 이 공유드라이브의 ‘콘텐츠 관리자’
+            </strong>
+            로 등록되어 있어 누구나 자유롭게 읽고 쓸 수 있습니다 — 별도 요청 없이 바로
+            접근하시면 됩니다.
+          </p>
+          <div className="flex flex-wrap gap-2.5 items-center">
+            <a
+              href={KIT_DRIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2.5 text-[13.5px] shadow-glow-sm transition"
+            >
+              <DriveIcon /> 공유드라이브 열기 ↗
+            </a>
+            <span className="text-[11px] text-slate-500 font-mono break-all">
+              drive.google.com/…/0AApU7x4G-XVWUk9PVA
+            </span>
+          </div>
+          <p className="mt-3 text-[12px] text-slate-400 leading-relaxed">
+            ※ 처음 들어가서 안 보이면 회사 Workspace 계정으로 로그인되어 있는지 확인하세요.
+            그래도 안 보이면 담당자에게 한 줄 알려 주시면 즉시 점검합니다.
+          </p>
+        </div>
+      </div>
+
       <BlockFlow
         items={[
           { num: "01", title: "압축 풀기", sub: "company-agent-kit.zip" },
@@ -94,6 +134,25 @@ node src/cli.js apply --target codex \\
         보여주므로 마음 놓고 먼저 확인하세요. 검토한 다음에만 설치(apply)가 진행되어 잘못
         눌러도 망가지지 않습니다.
       </Callout>
+
+      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
+        <div className="flex-1 min-w-[220px]">
+          <p className="text-[14px] font-semibold text-slate-100">
+            📘 더 자세한 시각 가이드
+          </p>
+          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+            준비물·설치 흐름·트러블슈팅·공유 .md 받기까지 — 그림과 함께 친절하게 설명한
+            전체 가이드는 <strong className="text-slate-200">부록 A1 · 설치 가이드</strong>
+            에 있습니다.
+          </p>
+        </div>
+        <a
+          href="#install-guide"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+        >
+          부록 A1로 이동 →
+        </a>
+      </div>
     </SlideShell>
   );
 }
@@ -139,5 +198,16 @@ function Row({
         {children}
       </td>
     </tr>
+  );
+}
+
+function DriveIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+      <path d="M8.5 2 L15.5 2 L23 15 L19.5 21 L12.5 21 L5 8 Z" fill="#ffffff" opacity="0.95" />
+      <path d="M8.5 2 L15.5 2 L12 8 L5 8 Z" fill="#1BBBCC" opacity="0.9" />
+      <path d="M15.5 2 L23 15 L19.5 21 L12 15 Z" fill="#7DEAD5" opacity="0.9" />
+      <path d="M5 8 L12 8 L12.5 21 Z" fill="#06438C" opacity="0.9" />
+    </svg>
   );
 }

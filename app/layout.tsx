@@ -2,26 +2,27 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DrimAES AI 활용 거버넌스 가이드 · v2",
+  title: "DrimAES AI 활용 가이드",
   description:
-    "DrimAES 사내 Team Plan 기반 Claude 운영, AX 워크플로우, Slack/Notion/GitHub/Google Workspace 연동, 4개 First Use Case 가이드",
-  applicationName: "DrimAES AI Guide v2",
+    "프로젝트별로 설치·최적화하는 압축 KIT, Google 공유 드라이브 단일 채널, 직무별 프로필(minimal · developer · product · business)과 SDD 기반 라이프사이클을 안내합니다.",
+  applicationName: "DrimAES AI Guide",
   authors: [{ name: "DrimAES" }],
   keywords: [
     "DrimAES",
-    "Claude",
-    "AI 거버넌스",
-    "AX 워크플로우",
-    "Slack",
-    "Notion",
-    "GitHub",
-    "Google Workspace",
-    "MCP",
+    "AI 활용 가이드",
+    "Agent KIT",
+    "SDD",
+    "Spec Driven Development",
+    "Google 공유 드라이브",
+    "AI-Knowhow",
+    "프롬프트 자산화",
+    "스킬 공유",
+    "Claude · Codex · Gemini · Kiro",
   ],
   openGraph: {
-    title: "DrimAES AI 활용 거버넌스 가이드",
+    title: "DrimAES AI 활용 가이드",
     description:
-      "공용 Claude 계정 운영 규칙, 통합 가이드, 사내 HW 활용까지. 슬라이드 형태로 한 페이지씩.",
+      "KIT 설치 · 공유 드라이브 연결 · 프롬프트와 스킬 공유 흐름까지 — 슬라이드 한 페이지씩.",
     type: "website",
   },
 };

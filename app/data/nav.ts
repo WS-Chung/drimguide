@@ -17,6 +17,8 @@ export const navItems: NavItem[] = [
   { id: "ideal", label: "이상적인 활용", number: "07" },
   { id: "benefit", label: "기대 효과", number: "08" },
   { id: "faq", label: "자주 묻는 질문", number: "09" },
+  { id: "install-guide", label: "설치 가이드", number: "A1", group: "부록", appendix: true },
+  { id: "usage-guide", label: "사용 가이드", number: "A2", group: "부록", appendix: true },
 ];
 
 export const idToIndex = Object.fromEntries(navItems.map((n, i) => [n.id, i]));

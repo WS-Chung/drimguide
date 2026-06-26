@@ -105,6 +105,25 @@ export default function Lifecycle() {
         <span className="font-mono text-brand-200">.agents/rules/</span> 안에 한 번만
         있습니다. 도구가 달라도 의미는 동일하게 적용됩니다.
       </Callout>
+
+      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
+        <div className="flex-1 min-w-[220px]">
+          <p className="text-[14px] font-semibold text-slate-100">
+            📗 대화 요령 · 프롬프트 라이브러리 · 지식 공유 흐름
+          </p>
+          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+            라이프사이클 이후 단계 — 잘 부탁하는 4요소, 프롬프트 예시, 가져오기·승격·내보내기
+            전체 흐름은 <strong className="text-slate-200">부록 A2 · 사용 가이드</strong>에
+            정리되어 있습니다.
+          </p>
+        </div>
+        <a
+          href="#usage-guide"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+        >
+          부록 A2로 이동 →
+        </a>
+      </div>
     </SlideShell>
   );
 }
