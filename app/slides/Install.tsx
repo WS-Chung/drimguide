@@ -14,6 +14,25 @@ export default function Install() {
       title="KIT 설치 — AI에게 부탁하면 끝납니다"
       description="명령어를 외울 필요 없습니다. 압축을 푼 폴더 안의 SETUP_WIZARD.md를 AI에게 건네면, AI가 직무·도구·프로젝트 폴더를 묻고 미리보기까지 보여준 뒤 설치합니다."
     >
+      {/* 상세 가이드 바로가기 — 타이틀 직하 */}
+      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
+        <div className="flex-1 min-w-[220px]">
+          <p className="text-[14px] font-semibold text-slate-100">
+            📘 상세 설치 가이드
+          </p>
+          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+            준비물 · 설치 흐름 · 트러블슈팅 · 공유 .md 받기까지 한 페이지에 정리한
+            풀버전 가이드입니다. 처음이거나 막힌 단계가 있을 때 펼쳐 보세요.
+          </p>
+        </div>
+        <a
+          href="#install-guide"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+        >
+          상세 가이드 열기 →
+        </a>
+      </div>
+
       {/* KIT 다운로드 — Google 공유드라이브 */}
       <div className="rounded-2xl glass p-4 sm:p-5 relative overflow-hidden">
         <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-brand-500/15 blur-3xl pointer-events-none" />
@@ -134,25 +153,6 @@ node src/cli.js apply --target codex \\
         보여주므로 마음 놓고 먼저 확인하세요. 검토한 다음에만 설치(apply)가 진행되어 잘못
         눌러도 망가지지 않습니다.
       </Callout>
-
-      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
-        <div className="flex-1 min-w-[220px]">
-          <p className="text-[14px] font-semibold text-slate-100">
-            📘 더 자세한 시각 가이드
-          </p>
-          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
-            준비물·설치 흐름·트러블슈팅·공유 .md 받기까지 — 그림과 함께 친절하게 설명한
-            전체 가이드는 <strong className="text-slate-200">부록 A1 · 설치 가이드</strong>
-            에 있습니다.
-          </p>
-        </div>
-        <a
-          href="#install-guide"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
-        >
-          부록 A1로 이동 →
-        </a>
-      </div>
     </SlideShell>
   );
 }

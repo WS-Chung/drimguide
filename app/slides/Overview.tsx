@@ -51,33 +51,7 @@ export default function Overview() {
           <Pillar title="프로젝트 최적화" body="하나의 룰로 모든 직무·프로젝트를 커버할 수 없습니다. KIT는 매 프로젝트마다 따로 설치·최적화됩니다." />
           <Pillar title="페르소나 구성" body="개발·PM·마케터·지원 등 사용 목적에 맞춰 KIT 프로필을 선택해 목표에 맞는 AI 페르소나를 만듭니다." />
         </div>
-
-        <div className="mt-10 rounded-2xl glass p-5 max-w-3xl">
-          <p className="text-xs font-semibold text-brand-300 uppercase tracking-wider mb-2">
-            How to read
-          </p>
-          <p className="text-sm text-slate-300 leading-relaxed">
-            왼쪽 사이드바에서 챕터를 누르면 본문이 한 페이지씩 바뀝니다. 키보드{" "}
-            <kbd className="kbd">←</kbd> / <kbd className="kbd">→</kbd> 또는 우측
-            하단 페이지 인디케이터로도 이동 가능. 모바일은 우하단{" "}
-            <strong>목차 ☰</strong> 버튼.
-          </p>
-        </div>
       </div>
-
-      <style>{`
-        .kbd {
-          display: inline-block;
-          padding: 0 0.4rem;
-          margin: 0 0.15rem;
-          border: 1px solid rgba(148,163,184,0.35);
-          border-radius: 0.35rem;
-          background: rgba(15,23,42,0.6);
-          color: #cbd5e1;
-          font-family: ui-monospace, monospace;
-          font-size: 0.72rem;
-        }
-      `}</style>
     </article>
   );
 }

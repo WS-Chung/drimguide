@@ -35,7 +35,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
         압축 파일로 배포합니다. 설치는 사람이 직접 하지 않고{" "}
         <strong className="text-slate-100">AI에게 SETUP_WIZARD.md를 건네면 AI가 합니다</strong>.
         명령어를 외울 필요 없고, 미리보기(dry-run)로 먼저 확인한 뒤 설치되므로 잘못
-        눌러도 안전합니다. 자세한 시각 가이드는 INSTALL_GUIDE.html.
+        눌러도 안전합니다. 좌측 부록의 <strong className="text-slate-200">상세 설치 가이드</strong>에
+        그림과 함께 단계가 정리되어 있습니다.
       </>
     ),
   },

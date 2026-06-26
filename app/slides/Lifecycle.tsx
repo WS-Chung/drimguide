@@ -9,8 +9,28 @@ export default function Lifecycle() {
       number="06"
       eyebrow="USAGE · KIT 사용법"
       title="에이전트 라이프사이클 · SDD · 프롬프트 컨텍스트"
-      description="KIT를 설치한 후 AI가 한 번의 요청을 처리하는 흐름. 회사 룰이 미리 깔린 컨텍스트 위에 내 요청이 얹히기 때문에, 매번 보안·출처·커밋 양식을 말하지 않아도 됩니다. 자세한 설명은 USAGE_GUIDE.html을 참고하세요."
+      description="KIT를 설치한 후 AI가 한 번의 요청을 처리하는 흐름. 회사 룰이 미리 깔린 컨텍스트 위에 내 요청이 얹히기 때문에, 매번 보안·출처·커밋 양식을 말하지 않아도 됩니다."
     >
+      {/* 상세 가이드 바로가기 — 타이틀 직하 */}
+      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
+        <div className="flex-1 min-w-[220px]">
+          <p className="text-[14px] font-semibold text-slate-100">
+            📗 상세 사용 가이드
+          </p>
+          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
+            대화 요령 · 프롬프트 라이브러리 · 지식 공유(가져오기 · 승격 · 내보내기)
+            전체 흐름이 한 페이지에 정리되어 있습니다. 설치 이후 단계가 궁금하면
+            펼쳐 보세요.
+          </p>
+        </div>
+        <a
+          href="#usage-guide"
+          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
+        >
+          상세 가이드 열기 →
+        </a>
+      </div>
+
       <div className="rounded-2xl glass p-4 sm:p-5">
         <p className="text-[11px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           한 건의 요청이 도는 흐름
@@ -105,25 +125,6 @@ export default function Lifecycle() {
         <span className="font-mono text-brand-200">.agents/rules/</span> 안에 한 번만
         있습니다. 도구가 달라도 의미는 동일하게 적용됩니다.
       </Callout>
-
-      <div className="rounded-2xl glass p-4 sm:p-5 flex flex-wrap items-center gap-3 justify-between">
-        <div className="flex-1 min-w-[220px]">
-          <p className="text-[14px] font-semibold text-slate-100">
-            📗 대화 요령 · 프롬프트 라이브러리 · 지식 공유 흐름
-          </p>
-          <p className="text-[12.5px] text-slate-400 mt-0.5 leading-relaxed">
-            라이프사이클 이후 단계 — 잘 부탁하는 4요소, 프롬프트 예시, 가져오기·승격·내보내기
-            전체 흐름은 <strong className="text-slate-200">부록 A2 · 사용 가이드</strong>에
-            정리되어 있습니다.
-          </p>
-        </div>
-        <a
-          href="#usage-guide"
-          className="inline-flex items-center gap-2 rounded-xl bg-brand-500/20 hover:bg-brand-500/30 text-brand-100 font-semibold px-4 py-2.5 text-[13.5px] ring-1 ring-brand-400/35 transition"
-        >
-          부록 A2로 이동 →
-        </a>
-      </div>
     </SlideShell>
   );
 }

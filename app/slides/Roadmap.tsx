@@ -31,7 +31,7 @@ export default function Roadmap() {
           title="KIT 도입 (현재 시점)"
           items={[
             "압축 KIT(company-agent-kit.zip) 배포",
-            "INSTALL_GUIDE.html · USAGE_GUIDE.html 함께 제공",
+            "상세 설치·사용 가이드 페이지 함께 제공",
             "Claude 기존 개인 계정 8개 그대로 사용",
             "지식 공유 채널은 Google 공유 드라이브 단일화",
           ]}
