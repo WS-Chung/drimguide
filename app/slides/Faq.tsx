@@ -5,101 +5,107 @@ import SlideShell from "@/app/components/SlideShell";
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
-    q: "기존에 쓰던 회사 이메일로 그대로 Team Plan에 합류할 수 있나요? 새로 만든 9개 공용 계정은 어떻게 되나요?",
+    q: "Claude 계정은 어떻게 사용하나요? Team Plan으로 바꾸나요?",
     a: (
       <>
-        네, 기존 회사 이메일(<span className="font-mono text-brand-200">name@drimaes.com</span>)로
-        그대로 합류할 수 있습니다. Anthropic{" "}
-        <a
-          href="https://support.anthropic.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
-          className="underline decoration-dotted text-brand-300"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Team Plan 가이드
-        </a>
-        에 따르면, Team 조직에 도메인을 등록하면 그 도메인의 어떤 이메일이든 초대
-        가능합니다. 기존 개인 Pro/Max를 쓰던 분은 초대 수락 시 (a) 데이터를 Team
-        조직으로 마이그레이션, (b) 분리 유지(Personal ↔ Work toggle) 중 선택할 수
-        있습니다.
-        <br />
-        <br />
-        새로 만든 9개 공용 계정(<span className="font-mono">robot1@</span>,{" "}
-        <span className="font-mono">server@</span> 등)은 Team 전환 후{" "}
-        <strong>1주차에 정리</strong>합니다 — Workspace에서 폐기하거나 그룹 별칭으로
-        재활용. Workspace 시트 비용(9계정 × 단가)이 즉시 절감됩니다.
+        Team Plan 전환 계획은 없습니다.{" "}
+        <strong className="text-slate-100">기존에 부여된 개인용 Claude 계정 8개를 그대로 사용</strong>
+        합니다. KIT는 어떤 AI 도구(Claude · Codex · Gemini · Kiro 등)에서도 같은 의미로
+        동작하도록 설계되어 있어, 계정 운영 방식이 바뀌어도 영향 없습니다.
       </>
     ),
   },
   {
-    q: "Premium 4명은 한 번 정하면 못 바꾸나요?",
+    q: "지식 공유는 어디서 하나요? Slack 채널이나 Notion DB는 안 만드나요?",
     a: (
       <>
-        아니요, 어드민이 언제든 재할당 가능합니다. Anthropic{" "}
-        <a
-          href="https://support.anthropic.com/en/articles/12004354-how-to-purchase-and-manage-premium-seats"
-          className="underline decoration-dotted text-brand-300"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Team 좌석 관리 문서
-        </a>
-        : <em>"If you want to upgrade an existing member from Standard to Premium,
-        you don't need to purchase a new seat. Use the seat tier reassignment in
-        Organization settings → Organization."</em> 새 좌석 구매 없이 등급만 바꾸면
-        됩니다.
-        <br />
-        <br />
-        변경 시 잔여 청구 주기에 대해 <strong>일할 청구</strong>됩니다. 헤비 작업이
-        일시적으로 발생한 사람에게 한 달만 Premium을 부여하는 것도 가능. 분기
-        리뷰에서 사용량 데이터를 보고 정식 재배분합니다.
+        Slack 채널·Notion 템플릿 DB 같은 추가 채널은 운영하지 않습니다.{" "}
+        <strong className="text-slate-100">Google 공유 드라이브의 AI-Knowhow 폴더 한 곳</strong>
+        에서만 스킬·프롬프트·노하우·피드백을 주고받습니다. 각자의 AI에이전트를 Google
+        Drive MCP에 연결해 대화로 가져오고 내보냅니다.
       </>
     ),
   },
   {
-    q: "Team Plan으로 옮기면 기존 8개 공용 계정의 채팅 히스토리는?",
+    q: "KIT는 어떤 형태로 받나요? 설치는 누가 하나요?",
     a: (
       <>
-        Week 1 단계에서 <strong>“읽기 전용 보존” 모드</strong>로 백업한 뒤, Week 3
-        종료 시점에 권한 회수합니다. 필요하면 PMO에서 백업 export 받을 수 있습니다.
+        담당자가{" "}
+        <span className="font-mono text-brand-200">company-agent-kit.zip</span>{" "}
+        압축 파일로 배포합니다. 설치는 사람이 직접 하지 않고{" "}
+        <strong className="text-slate-100">AI에게 SETUP_WIZARD.md를 건네면 AI가 합니다</strong>.
+        명령어를 외울 필요 없고, 미리보기(dry-run)로 먼저 확인한 뒤 설치되므로 잘못
+        눌러도 안전합니다. 자세한 시각 가이드는 INSTALL_GUIDE.html.
       </>
     ),
   },
   {
-    q: "Standard와 Premium의 실질적 차이는?",
+    q: "한 사람이 여러 프로젝트에서 다른 KIT를 쓸 수 있나요?",
     a: (
       <>
-        Premium은 <strong>Claude Code(CLI)</strong>와 5× 더 많은 usage가 포함됩니다.
-        코드 헤비 작업이 주력이면 Premium, 채팅·기획 위주면 Standard 권장.
+        네, 그게 KIT의 핵심입니다. 하나의 룰로 다양한 직무·프로젝트를 커버할 수 없기
+        때문에, KIT는 <strong className="text-slate-100">매 프로젝트마다 따로 설치되어 그 폴더 안에서만 적용</strong>
+        됩니다. 한 사람이 PM 프로젝트에는 product 프로필, 개인 PoC에는 developer 프로필을
+        각각 쓸 수 있습니다.
       </>
     ),
   },
   {
-    q: "민감한 1회성 작업 채팅이 동료에게 보이지 않게 하려면?",
+    q: "직무별 페르소나는 어떻게 만들어지나요?",
     a: (
       <>
-        Team Plan에서도 <strong>Claude Projects</strong>를 분리해 만들고 본인만
-        멤버로 두면 됩니다. 사내 RAG/로컬 LLM(부록) 활용도 가능.
+        KIT 프로필 4종(<span className="font-mono text-brand-200">minimal · developer · product · business</span>)을
+        단독 또는 조합으로 선택하면 됩니다. 마케터는 business 단독, PM이 백엔드 PoC를
+        할 때는 product + developer 같은 식입니다. 기대 효과 슬라이드의 시나리오 표를
+        참고하세요.
       </>
     ),
   },
   {
-    q: "외부 고객 PC에서 좌석으로 로그인해도 되나요?",
-    a: "금지입니다. 회사 관리 디바이스에서만 로그인합니다. 어드민 콘솔에서 IP 정책으로 추가 제한 가능.",
-  },
-  {
-    q: "API 키가 필요한 자동화는?",
+    q: "회사가 매주 회고나 KPI를 강제하나요?",
     a: (
       <>
-        자동화 워크플로우용 API 키는 PMO가 발급합니다.{" "}
-        <span className="font-mono text-brand-200">#ai-governance</span>에 사용
-        목적/예상 호출량을 적으면 됩니다. 좌석 세션 토큰 재사용 금지.
+        강제하지 않습니다. 매주 회고, 월간 데모데이, 분기 거버넌스 리뷰 같은 일정은{" "}
+        <strong className="text-slate-100">설정하지 않습니다</strong>. 잘 쓴 사례가
+        자연스럽게 공유되고 검증되어 자산이 되는 상향식 모델을 지향합니다. 거버넌스는
+        운영 데이터가 충분히 쌓인 뒤에 정립합니다.
       </>
     ),
   },
   {
-    q: "평소 가벼운 사용으로도 Standard 한도가 부족하면?",
-    a: "분기 리뷰에서 Premium 업그레이드 신청 가능. 그 사이에는 작업 분할 또는 사내 RAG/로컬 LLM(부록) 보조 사용.",
+    q: "막힌 케이스나 실패 사례는 어떻게 하나요?",
+    a: (
+      <>
+        막힌 사례도 자산입니다. AI에게 "이 내용을 피드백 .md로 정리해서{" "}
+        <span className="font-mono text-brand-200">AI-Knowhow/feedbacks</span>에
+        올릴 수 있게 해줘"라고 부탁하면, AI가 어디서 어떻게 막혔는지 정리해 줍니다.
+        다음 KIT 배포본의 개선 트리거가 됩니다.
+      </>
+    ),
+  },
+  {
+    q: "민감 정보를 실수로 입력했어요. 어떻게 해야 하나요?",
+    a: (
+      <>
+        대화 히스토리에서 해당 메시지를 즉시 삭제하고, 회사 비밀번호·토큰·고객
+        PII였다면 담당자에게 보고해 키 회전 등 사후 조치를 진행합니다. 앞으로는{" "}
+        <span className="font-mono text-rose-200">{`<고객명>`}</span>,{" "}
+        <span className="font-mono text-rose-200">[KEY_REDACTED]</span>처럼 마스킹한
+        뒤 사용하세요.
+      </>
+    ),
+  },
+  {
+    q: "설치가 자꾸 안 됩니다",
+    a: (
+      <>
+        zip 안의 <span className="font-mono text-brand-200">SETUP_WIZARD.md</span>의
+        "설치가 안 될 때" 섹션을 AI에게 함께 보여주면 원인을 짚어 줍니다. 직접 명령으로
+        설치한다면 Node.js LTS ≥ 18 설치, 폴더 쓰기 권한, 경로의 공백 처리(Windows에서{" "}
+        <code className="text-brand-200">"C:\My Projects\repo"</code>) 정도를 먼저
+        확인하세요.
+      </>
+    ),
   },
 ];
 
@@ -107,10 +113,10 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <SlideShell
-      number="19"
+      number="09"
       eyebrow="FAQ"
       title="자주 묻는 질문"
-      description="실제 운영에서 자주 나온 질문들. 답이 없으면 #ai-governance에 올려주세요."
+      description="실제 운영에서 자주 나오는 질문들. 답이 없으면 Google 공유 드라이브의 AI-Knowhow/feedbacks에 올려주세요."
     >
       <div className="space-y-2.5">
         {faqs.map((f, i) => {

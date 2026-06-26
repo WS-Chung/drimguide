@@ -5,50 +5,64 @@ import Callout from "@/app/components/Callout";
 export default function Operation() {
   return (
     <SlideShell
-      number="05"
-      eyebrow="RULES · 운영"
-      title="개인 좌석 기반 운영 규칙"
-      description="각자가 자기 좌석으로 로그인합니다. 동시 사용 충돌·점유 알림 같은 공용 계정 룰은 폐지되며, 좌석 단위 보안과 결과물 보관 룰만 남습니다."
+      number="03"
+      eyebrow="RULES · 운영 규칙"
+      title="꼭 지킬 것은 단 2가지 — 나머지는 자율"
+      description="회사 차원의 탑다운 룰은 정하지 않습니다. 보안과 출처, 이 두 가지만 지키면 나머지는 각자 프로젝트에 맞게 자유롭게 운영합니다. 거버넌스는 운영 데이터가 충분히 쌓인 뒤 정립합니다."
     >
       <CardGrid cols={2}>
-        <Card title="🔐 로그인 보안" badge="자율" accent="amber">
-          <p className="mb-2">
-            Team Plan에선 <strong>회사 Workspace SSO 연동</strong>으로 로그인. 별도
-            비밀번호 관리 불필요.
+        <Card title="① 민감정보 입력 금지" badge="Must" icon="🚫" accent="rose">
+          <p className="mb-1.5">
+            <strong className="text-slate-100">고객 개인정보, 비밀번호·토큰, 미공개 계약·재무 자료</strong>는
+            AI에 직접 입력하지 않습니다.
           </p>
           <p>
-            2단계 인증·로그인 알림 등 추가 강화는 회사 Workspace 정책에 종속. 필요 시
-            그라운드룰로 도입 가능.
+            꼭 써야 하는 경우{" "}
+            <span className="font-mono text-rose-200">{`<고객명>`}</span>,{" "}
+            <span className="font-mono text-rose-200">[KEY_REDACTED]</span>처럼 가려서
+            사용합니다.
           </p>
         </Card>
-        <Card title="📦 결과물 보관" accent="brand">
-          <ul className="list-disc pl-5 space-y-1">
-            <li>중요 결과는 Notion DB에 즉시 적재</li>
-            <li>코드 산출물은 GitHub PR로만 반영</li>
-            <li>공용 Drive에 백업, 외부 공유는 도메인 제한</li>
-            <li>개인 디바이스에 결과물 누적 금지</li>
-          </ul>
-        </Card>
-        <Card title="🎚 사용 한도 관리" accent="emerald">
-          <ul className="list-disc pl-5 space-y-1">
-            <li>좌석별 한도는 Team 어드민 콘솔에서 모니터링</li>
-            <li>Standard 한도 임박 시 작업 분할 / Premium 업그레이드 제안</li>
-            <li>API 추가 사용 필요 시 PMO 별도 키 발급</li>
-          </ul>
-        </Card>
-        <Card title="⚠ 민감 정보 마스킹" badge="Must" accent="rose">
-          고객사 고유명·인사정보·비밀번호/토큰·미공개 사양은 직접 입력 금지. 필요 시{" "}
-          <span className="font-mono text-rose-200">[CUSTOMER_A]</span>,{" "}
-          <span className="font-mono text-rose-200">[KEY_REDACTED]</span>처럼
-          플레이스홀더로 치환.
+        <Card title="② 외부 자료는 출처 남기기" badge="Must" icon="✱" accent="brand">
+          <p className="mb-1.5">
+            인터넷 글·문서 등 <strong className="text-slate-100">외부 자료를 가져와 쓰면</strong>{" "}
+            출처를 함께 적어 둡니다.
+          </p>
+          <p>
+            결과물에 외부 인용이 있을 때, 어디서 가져왔는지 한 줄이라도 남기는 습관이 회사
+            자산의 신뢰성을 만듭니다.
+          </p>
         </Card>
       </CardGrid>
 
-      <Callout variant="info" title="ℹ Team 전환으로 사라지는 룰">
-        “공용 계정 점유 알림”, “동시 사용 한도 분쟁 회피”는 더 이상 불필요. 각자
-        자기 좌석에서 자유롭게 사용. 이전 가이드 v1의{" "}
-        <span className="font-mono text-brand-200">{`#ai-{account}`}</span>{" "}
-        채널은 Project 채널로 자연 흡수.
+      <Callout variant="info" title="ℹ 나머지는 모두 자율">
+        Claude 계정 운영 방식, 작업 시간대, 프롬프트 작성 스타일, 결과물 공유 빈도 등은
+        모두 각자/팀 자율로 결정합니다. 회사가 강제하는 KPI(주간 회고, 데모데이 등)는{" "}
+        <strong className="text-brand-200">설정하지 않습니다</strong>. 잘 쓴 사례가 자연스럽게
+        공유되고 검증되어 자산이 되는 방식을 지향합니다.
+      </Callout>
+
+      <CardGrid cols={3}>
+        <Card title="🔓 계정 운영" accent="slate">
+          기존에 부여된 Claude <strong className="text-slate-100">개인 계정 8개</strong>를
+          그대로 사용합니다. Team Plan 전환·시트 재배분 등의 계획은 현재 없습니다.
+        </Card>
+        <Card title="📂 지식 공유" accent="slate">
+          공유 채널은 <strong className="text-slate-100">Google 공유 드라이브 한 곳</strong>
+          만 사용합니다. Slack 채널 운영, Notion 템플릿 DB 같은 추가 채널은 운영하지
+          않습니다.
+        </Card>
+        <Card title="🧭 거버넌스" accent="slate">
+          정식 거버넌스 체계는 운영 데이터(KIT 사용 패턴·자주 쓰는 프롬프트·실제 문제 사례)가
+          충분히 쌓인 뒤에 정립합니다. 지금은 <strong className="text-slate-100">결정 보류</strong>.
+        </Card>
+      </CardGrid>
+
+      <Callout variant="warn" title="⚠ 막혔을 때 가장 빠른 길">
+        문제가 생기면 화면의 오류 메시지를 그대로 AI에게 붙여넣고 “이거 어떻게 해결해?”
+        라고 물어보세요. 그래도 안 풀리면 AI에게 피드백을 .md로 정리하게 해서{" "}
+        <span className="font-mono text-amber-200">AI-Knowhow/feedbacks</span>에 올리면
+        다른 사람도 같은 문제를 공유합니다.
       </Callout>
     </SlideShell>
   );
