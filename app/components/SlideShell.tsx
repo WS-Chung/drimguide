@@ -51,7 +51,7 @@ export default function SlideShell({
           {title}
         </h2>
         {description && (
-          <p className="mt-3 max-w-3xl text-sm sm:text-[15px] text-slate-400 leading-relaxed">
+          <p className="mt-3 text-sm sm:text-[15px] text-slate-400 leading-relaxed">
             {description}
           </p>
         )}

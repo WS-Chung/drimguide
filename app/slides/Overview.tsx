@@ -10,15 +10,15 @@ export default function Overview() {
         </div>
 
         <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05]">
-          DrimAES <span className="gradient-text">AI 활용</span>
-          <br />
-          가이드
+          DrimAES <span className="gradient-text">AI 활용</span> 가이드
         </h1>
 
-        <p className="mt-5 max-w-3xl text-base sm:text-lg text-slate-300 leading-relaxed">
+        <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed">
           회사가 룰을 내려보내는 가이드가 아닙니다. 각자에게{" "}
           <strong className="text-slate-100">압축 KIT</strong>를 제공해 직무·프로젝트에
-          맞게 설치하고, AI 활용 노하우를 공유 드라이브로 주고받으며{" "}
+          맞게 설치하고,
+          <br />
+          AI 활용 노하우를 공유 드라이브로 주고받으며{" "}
           <strong className="text-slate-100">우리 회사의 AI 활용 스킬셋을 함께 다듬어 가는</strong>{" "}
           상향식 진화 방식입니다.
         </p>
