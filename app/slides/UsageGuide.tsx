@@ -23,7 +23,7 @@ export default function UsageGuide() {
       variant="appendix"
     >
       {/* 0. 큰 그림 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           0. 이 매뉴얼을 보는 법
         </p>
@@ -51,7 +51,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 1. 라이프사이클 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1. 에이전트의 라이프사이클
         </p>
@@ -72,7 +72,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 1.1 SDD */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1.1 SDD 소개 — 같은 흐름, 다른 깊이
         </p>
@@ -145,7 +145,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 1.2 프롬프트 적용 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1.2 프롬프트가 적용되는 과정 — 5층으로 쌓입니다
         </p>
@@ -191,7 +191,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 2. 대화 요령 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2. 에이전트와의 대화 요령
         </p>
@@ -237,7 +237,7 @@ export default function UsageGuide() {
       </CardGrid>
 
       {/* 2.2 프롬프트 예시 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2.2 프롬프트 예시 — 골격 활용
         </p>
@@ -308,7 +308,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 3. 지식 공유 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3. 지식 공유 방법
         </p>
@@ -334,7 +334,7 @@ export default function UsageGuide() {
       </div>
 
       {/* 3.1 가져오기 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.1 가져오기 — 다운로드 / MD 복사
         </p>
@@ -387,7 +387,7 @@ AI-Knowhow/docs/`}</pre>
       </div>
 
       {/* 3.2 승격 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.2 승격 및 사용 방법
         </p>
@@ -489,7 +489,7 @@ AI-Knowhow/docs/`}</pre>
       </div>
 
       {/* 3.3 내보내기 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3.3 내보내기 — 업로드 / MD 추출
         </p>

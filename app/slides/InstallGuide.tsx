@@ -16,7 +16,7 @@ export default function InstallGuide() {
       variant="appendix"
     >
       {/* 0. 마음 편히 가지기 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           0. 먼저, 마음 편히 가지세요
         </p>
@@ -39,7 +39,7 @@ export default function InstallGuide() {
       </Callout>
 
       {/* KIT 다운로드 다시 노출 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-2">
           KIT 받기 (공유드라이브)
         </p>
@@ -58,7 +58,7 @@ export default function InstallGuide() {
       </div>
 
       {/* 1. 준비물 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           1. 준비물 확인
         </p>
@@ -112,7 +112,7 @@ export default function InstallGuide() {
       </div>
 
       {/* 2. 설치 흐름 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           2. 설치하기
         </p>
@@ -168,7 +168,7 @@ export default function InstallGuide() {
         잘못 눌러서 망가질 걱정이 없습니다.
       </Callout>
 
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           내 직무에는 어떤 걸 설치하나요?
         </p>
@@ -203,7 +203,7 @@ export default function InstallGuide() {
         </div>
       </div>
 
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           개발자용 — 직접 명령으로 설치하기
         </p>
@@ -241,7 +241,7 @@ node src/cli.js apply --target claude \\
       </div>
 
       {/* 3. 공유 .md 받기 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           3. 공유 .md 받기 — AI-Knowhow 폴더
         </p>
@@ -282,7 +282,7 @@ AI-Knowhow/docs/`}</pre>
       </CardGrid>
 
       {/* 5. 트러블슈팅 */}
-      <div className="rounded-2xl glass p-4 sm:p-5">
+      <div className="rounded-2xl glass p-4 sm:p-5 space-y-3">
         <p className="text-[12px] uppercase tracking-[0.18em] text-brand-300 font-semibold mb-3">
           5. 막히면 — 이렇게 해결하세요
         </p>
